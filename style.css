@@ -254,6 +254,10 @@ p, span, div {
   
 
   /* About Section Styles */
+  #about{
+    background-image: linear-gradient(rgb(245, 247, 248) , rgb(249, 241, 249));
+}
+
 #about .skill-item {
     transition: transform 0.3s ease;
     border-radius: 8px;
@@ -287,5 +291,9 @@ p, span, div {
     #about .lead {
       font-size: 1rem;
     }
+  }
+
+  #contacts{
+    background-image: linear-gradient(rgb(245, 247, 248) , rgb(249, 241, 249));
   }
   
