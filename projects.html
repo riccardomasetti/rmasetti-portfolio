@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Projects - Riccardo Masetti</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid align">
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item" style="margin-right: 30px;">
+            <a page-section="Home Page" class="nav-link active" aria-current="page" href="index.html#home"><i class="feather-16" data-feather="home"></i></a>
+          </li>
+          <li class="nav-item" style="margin-right: 30px;">
+            <a page-section="About" class="nav-link" href="index.html#about"><i class="feather-16" data-feather="user"></i></a>
+          </li>
+          <li class="nav-item" style="margin-right: 30px;">
+            <a page-section="Education" class="nav-link" href="index.html#education"><i class="feather-16" data-feather="book-open"></i></a>
+          </li>
+          <li class="nav-item" style="margin-right: 30px;">
+            <a page-section="Projects" class="nav-link" href="index.html#projects"><i class="feather-16" data-feather="code"></i></a>
+          </li>
+          <li class="nav-item" style="margin-right: 30px;">
+            <a page-section="Contacts" class="nav-link" href="index.html#contacts"><i class="feather-16" data-feather="mail"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="py-5 bg-light" style="margin-top: 70px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="display-4 fw-bold">All <span class="text-primary">Projects</span></h1>
+          <div class="underline mx-auto" style="width: 80px; height: 4px; background-color: #2E39FF; margin-top: 15px;"></div>
+          <p class="lead mt-4 text-muted mx-auto" style="max-width: 800px;">
+            Here you'll find a collection of my most significant projects. Some of these were developed for educational purposes, allowing me to learn and grow, while others 
+            represent unique challenges I've tackled, showcasing my skills in software development, web applications, and problem-solving.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="btn-group d-flex flex-wrap justify-content-center" role="group" id="category-filters">
+            <!-- Filter buttons will be inserted here by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-4">
+    <div class="container">
+      <div class="row" id="projects-container">
+        <!-- Projects will be inserted here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <h5 class="mb-3">Riccardo Masetti</h5>
+          <div class="mb-3">
+            <a href="https://github.com/riccardomasetti" class="text-white me-3" target="_blank">
+              <i data-feather="github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/r-masetti/" class="text-white me-3" target="_blank">
+              <i data-feather="linkedin"></i>
+            </a>
+            <a href="mailto:riccardo.masetti@outlook.com" class="text-white">
+              <i data-feather="mail"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p class="mb-0">© 2025 Riccardo Masetti. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Feather Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="js/projects-data.js"></script>
+  <script src="js/projects.js"></script>
+</body>
+</html>

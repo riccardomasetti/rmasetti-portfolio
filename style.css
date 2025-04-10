@@ -155,7 +155,7 @@ p, span, div {
 /* Sections */
 
 #home{
-    background-image: linear-gradient(rgb(235, 245, 251) , rgb(249, 241, 249));
+  background-image: linear-gradient(rgb(235, 245, 251) , rgb(245, 245, 245));
 }
 
   #home h1 {
@@ -255,7 +255,7 @@ p, span, div {
 
   /* About Section Styles */
   #about{
-    background-image: linear-gradient(rgb(245, 247, 248) , rgb(249, 241, 249));
+    background-image: linear-gradient(rgb(235, 245, 251) , rgb(245, 245, 245));
 }
 
 #about .skill-item {

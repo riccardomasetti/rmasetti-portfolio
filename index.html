@@ -257,12 +257,13 @@
                 </div>
               </div>
             </div>
-          
-
+          </div>
+        </div>
+      </section>
 
 
       
-      <section id="education" style="min-height: 100vh; background-image: linear-gradient(rgb(245, 247, 248), rgb(249, 241, 249));">
+      <section id="education" style="min-height: 100vh; background-image: linear-gradient(rgb(235, 245, 251) , rgb(245, 245, 245));">
         <div class="container py-5">
           <div class="row">
             <div class="col-12 text-center mb-5">
@@ -391,18 +392,34 @@
       
       
       
-      <section id="projects" class="container py-5" style="min-height: 100vh;">
-        <h1>Projects</h1>
-        <p>Details about projects here.</p>
+      <section id="projects" style="min-height: 100vh; background-image: linear-gradient(rgb(235, 245, 251) , rgb(245, 245, 245)); padding: 80px 0;">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <h1 class="display-4 fw-bold">My <span class="text-primary">Projects</span></h1>
+              <div class="underline mx-auto" style="width: 80px; height: 4px; background-color: #2E39FF; margin-top: 15px;"></div>
+              <p class="lead mt-4 mb-5 text-muted mx-auto" style="max-width: 800px;">
+                This section contains some of the projects that I have developed or I am currently developing during my studies.
+              </p>
+            </div>
+          </div>
+      
+          <div class="row mb-5" id="featured-projects-container">
+            <!-- Projects will be dynamically inserted here -->
+          </div>
+      
+          <!-- View All Projects Button -->
+          <div class="row">
+            <div class="col-12 text-center">
+              <a href="projects.html" class="btn btn-primary btn-lg">
+                <i data-feather="list" style="width: 20px; height: 20px;"></i> View All Projects
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
-
-
-
-
-
       
-      
-      <section id="contacts" style="min-height: 100vh; background-color: #f8f9fa;">
+      <section id="contacts" style="min-height: 100vh; background-image: linear-gradient(rgb(235, 245, 251) , rgb(255, 255, 255));">
         <div class="container py-5">
           <div class="row">
             <div class="col-12 text-center mb-5">
@@ -479,12 +496,38 @@
         </div>
       </section>
 
+      <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              <h5 class="mb-3">Riccardo Masetti</h5>
+              <div class="mb-3">
+                <a href="https://github.com/riccardomasetti" class="text-white me-3" target="_blank">
+                  <i data-feather="github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/r-masetti/" class="text-white me-3" target="_blank">
+                  <i data-feather="linkedin"></i>
+                </a>
+                <a href="mailto:riccardo.masetti@outlook.com" class="text-white">
+                  <i data-feather="mail"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <p class="mb-0">© 2025 Riccardo Masetti. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="js/projects-data.js"></script>
+    <script src="js/home-projects.js"></script>
     <script>
-        feather.replace(); // Inizializza Feather Icons
+        feather.replace();
     </script>
 
   </body>
