@@ -1,11 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
     <script src="https://unpkg.com/feather-icons"></script>
@@ -65,16 +62,16 @@
                    <span>Github</span>
                 </a>
              </div>
-            
             </div>
       
             <div class="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end">
-              <img src="media/profile-formal(2).jpg" alt="Riccardo Masetti" class="img-fluid shadow rounded" style="max-width: 100%; height: auto; max-width: 400px;">
+              <img src="media/profile-formal(2).jpg" alt="Riccardo Masetti" 
+                   class="img-fluid shadow rounded" 
+                   style="max-width: 100%; width: auto; max-height: 400px; object-fit: cover;">
             </div>
           </div>
         </div>
-      </section>
-      
+      </section> 
       
       <section id="about" style="min-height: 100vh;">
         <div class="container py-5">
@@ -120,33 +117,35 @@
                     <i data-feather="file-text" class="text-primary me-3"></i>
                     <h3 class="fw-bold mb-0">Resume</h3>
                   </div>
-                  <div class="d-flex align-items-center">
-                    <p class="lead mb-0 me-3">Want to know more about my experience?</p>
-                    <a href="media/CV_eng_riccardo_masetti.pdf" download class="btn btn-primary me-3" style="border-radius: 30px; padding: 8px 20px;">
-                      <div class="d-flex align-items-center">
-                      <i data-feather="download" class="me-2" style="width: 18px; height: 18px;"></i>
-                      <div>
-                        <small class="d-block">Download</small>
-                        <strong>English CV</strong>
-                      </div>
-                      </div>
-                    </a>
-                    <a href="media/CV_ita_riccardo_masetti.pdf" download class="btn btn-outline-primary" style="border-radius: 30px; padding: 8px 20px;">
-                      <div class="d-flex align-items-center">
-                        <i data-feather="download" class="me-2" style="width: 18px; height: 18px;"></i>
-                        <div>
-                          <small class="d-block">Scarica</small>
-                          <strong>CV Italiano</strong>
+                  <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center">
+                    <p class="lead mb-3 mb-md-0 me-md-3">Want to know more about my experience?</p>
+                    <div class="d-flex flex-column flex-sm-row w-100 w-md-auto gap-2">
+                      <a href="media/CV_eng_riccardo_masetti.pdf" download class="btn btn-primary" style="border-radius: 30px; padding: 8px 20px;">
+                        <div class="d-flex align-items-center">
+                          <i data-feather="download" class="me-2" style="width: 18px; height: 18px;"></i>
+                          <div>
+                            <small class="d-block">Download</small>
+                            <strong>English CV</strong>
+                          </div>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                      <a href="media/CV_ita_riccardo_masetti.pdf" download class="btn btn-outline-primary" style="border-radius: 30px; padding: 8px 20px;">
+                        <div class="d-flex align-items-center">
+                          <i data-feather="download" class="me-2" style="width: 18px; height: 18px;"></i>
+                          <div>
+                            <small class="d-block">Scarica</small>
+                            <strong>CV Italiano</strong>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           
-          
+          <!-- TODO: it would be useful to apply DRY in the following section -->
           <div class="row">
             <div class="col-md-12">
               <div class="card border-0 shadow-sm">
@@ -260,9 +259,7 @@
           </div>
         </div>
       </section>
-
-
-      
+ 
       <section id="education" style="min-height: 100vh; background-image: linear-gradient(rgb(235, 245, 251) , rgb(245, 245, 245));">
         <div class="container py-5">
           <div class="row">
@@ -390,8 +387,6 @@
         </div>
       </section>
       
-      
-      
       <section id="projects" style="min-height: 100vh; background-image: linear-gradient(rgb(235, 245, 251) , rgb(245, 245, 245)); padding: 80px 0;">
         <div class="container">
           <div class="row">
@@ -405,10 +400,11 @@
           </div>
       
           <div class="row mb-5" id="featured-projects-container">
-            <!-- Projects will be dynamically inserted here -->
+            <!-- 
+              place for projects
+            -->
           </div>
       
-          <!-- View All Projects Button -->
           <div class="row">
             <div class="col-12 text-center">
               <a href="projects.html" class="btn btn-primary btn-lg">
@@ -520,15 +516,12 @@
         </div>
       </footer>
 
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="js/projects-data.js"></script>
     <script src="js/home-projects.js"></script>
+    <script src="script.js"></script>
     <script>
         feather.replace();
     </script>
-
   </body>
 </html>

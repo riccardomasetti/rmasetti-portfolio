@@ -44,7 +44,7 @@ const projectsData = [
       category: "mobile",
       icon: "smartphone",
       technologies: "Flutter • Dart • Mobile Development",
-      description: "A cross-platform mobile application built with Flutter to help users to track food expiration dates in their fridge. <br><br> CURRENTLY UNDER DEVELOPMENT.",
+      description: "A cross-platform mobile application built with Flutter to help users to track food expiration dates in their fridge.",
       detailsLink: "projects/expiration-tracker.html",
       githubLink: "",
       featured: false

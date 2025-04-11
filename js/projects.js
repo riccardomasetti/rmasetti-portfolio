@@ -36,12 +36,15 @@ document.addEventListener('DOMContentLoaded', function() {
               <p>${project.description}</p>
               <div class="d-flex mt-4 pt-2">`;
       
-        // Aggiungi il bottone GitHub solo se il titolo del progetto non è "Expiration Tracker"
+        // Not showing the github button for Expiration tracker because the repo is not published yet
         if (project.title !== "Expiration Tracker") {
           projectCardHTML += `
             <a href="${project.githubLink}" target="_blank" class="btn btn-outline-dark">
               <i data-feather="github" style="width: 18px; height: 18px;"></i> GitHub
             </a>`;
+        }
+        if (project.title === "Expiration Tracker") {
+          projectCardHTML += `<span class="badge bg-warning">UNDER DEVELOPMENT</span>`;
         }
       
         projectCardHTML += `
@@ -49,10 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
           </div>`;
       
-        // Inserisci il contenuto nel div della card
         projectCard.innerHTML = projectCardHTML;
       
-        // Aggiungi la card al contenitore
         projectsContainer.appendChild(projectCard);
       });
   

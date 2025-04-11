@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
       featuredProjectsContainer.appendChild(projectCard);
     });
     
-    // Re-initialize Feather Icons after dynamically adding content
     if (window.feather) {
       feather.replace();
     }

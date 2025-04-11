@@ -1,16 +1,4 @@
 
-// NON SERVE?
-// document.querySelectorAll('.nav-link').forEach(link => {
-//     link.addEventListener('click', function (e) {
-//       // Rimuove la classe dagli altri
-//       document.querySelectorAll('.nav-link').forEach(el => {
-//         el.classList.remove('clicked');
-//       });
-//       // Aggiunge la classe a quello cliccato
-//       this.classList.add('clicked');
-//     });
-//   });
-
 document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
   const form = e.target;
@@ -35,5 +23,18 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   .catch(error => console.error('Error:', error));
 });
 
-// Re-initialize feather icons after form submission
 feather.replace();
+
+document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const navbarCollapse = document.querySelector('#navbarNav');
+  
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (navbarCollapse.classList.contains('show')) {
+        bootstrap.Collapse.getInstance(navbarCollapse).hide();
+      }
+    });
+  });
+});
