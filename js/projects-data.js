@@ -49,6 +49,17 @@ const projectsData = [
       githubLink: "",
       featured: false
     },
+    {
+      title: "PurpLLe Backend",
+      category: "web",
+      icon: "code",
+      technologies: "Flask • Python • Web App",
+      description: "Web app aimed at improving students' awareness of their study methodology through a recommendation system and a testing environment tailored to their needs.",
+      detailsLink: "",
+      githubLink: "https://github.com/riccardomasetti/backend-purplle",
+      featured: false
+    },
+    
     
   ];
   
