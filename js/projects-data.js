@@ -1,5 +1,35 @@
 const projectsData = [
     {
+      title: "eva - continuous learning for STEM students",
+      category: "web",
+      icon: "code",
+      technologies: "Django • Python • Web App • RAG • LLMs • Docker",
+      description: "eva is an AI-powered application that aims to improve the way students prepare for university exams.\n\nIt exploits RAG techniques and LLMs to generate tests based on students' notes, following the exam format, so that testing can be highly effective.\n\nThe project is currently part of the Switch2Product competition at Politecnico di Milano, and it is being carried on with my cofounders Pietro Carrucciu and Matteo Minotti.\n\nMore details will follow.",
+      detailsLink: "",
+      githubLink: "",
+      featured: false
+    },
+    {
+      title: "variant classification project",
+      category: "Machine & Deep Learning",
+      icon: "layers",
+      technologies: "Machine Learning • Python • Snakemake • Hydra",
+      description: "Research project conducted at NECSTLab, Politecnico di Milano, as part of the Leonardo project in collaboration with Samuele Tondelly and under the supervision of Leonardo De Grandis.\n\nCurrently contributing to a pangenomic variant classification project using Graph Machine Learning techniques.\n\nThe research activities focus on applying advanced AI and data-driven methods to computational biology and genomics, with the goal of improving variant classification accuracy in genomic datasets. the project is still ongoing.",
+      detailsLink: "",
+      githubLink: "",
+      featured: false
+    },
+    {
+      title: "AN2DL Challenges",
+      category: "Machine & Deep Learning",
+      icon: "layers",
+      technologies: "Python • Deep Learning • Kaggle",
+      description: "Challenges solved on Kaggle for a competition linked to the Artificial Neural Networks and Deep Learning course at Politecnico di Milano.\n\nMore information on specific challenges is available inside the repository.",
+      detailsLink: "",
+      githubLink: "https://github.com/riccardomasetti/ANNDL-Challenges",
+      featured: false
+    },
+    {
       title: "Missioni Web Application",
       category: "web",
       icon: "code",
@@ -49,16 +79,7 @@ const projectsData = [
       githubLink: "",
       featured: false
     },
-    {
-      title: "PurpLLe Backend",
-      category: "web",
-      icon: "code",
-      technologies: "Flask • Python • Web App",
-      description: "Web app aimed at improving students' awareness of their study methodology through a recommendation system and a testing environment tailored to their needs.",
-      detailsLink: "",
-      githubLink: "https://github.com/riccardomasetti/backend-purplle",
-      featured: false
-    },
+
     
     
   ];
