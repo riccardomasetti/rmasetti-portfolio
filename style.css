@@ -189,7 +189,7 @@ body {
   width: auto;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .profile-img-desktop {
     display: block;
   }
@@ -201,7 +201,7 @@ body {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
   #home h1 {
     white-space: normal;
   }
@@ -233,7 +233,8 @@ body {
   transition: all 0.4s ease-out;
 }
 
-.wrapper .button:hover {
+.wrapper .button:hover,
+.wrapper .button:active {
   width: 240px;
 }
 
@@ -249,11 +250,13 @@ body {
   transition: all 0.4s ease-out;
 }
 
-.wrapper .button:nth-child(1):hover .icon {
+.wrapper .button:nth-child(1):hover .icon,
+.wrapper .button:nth-child(1):active .icon {
   background: #4267B2;
 }
 
-.wrapper .button:nth-child(2):hover .icon {
+.wrapper .button:nth-child(2):hover .icon,
+.wrapper .button:nth-child(2):active .icon {
   background: #333;
 }
 
@@ -263,7 +266,8 @@ body {
   transition: all 0.4s ease-out;
 }
 
-.wrapper .button:hover .icon i {
+.wrapper .button:hover .icon i,
+.wrapper .button:active .icon i {
   color: #fff;
 }
 
@@ -288,7 +292,8 @@ body {
   border-radius: 12px;
 }
 
-.card:hover {
+.card:hover,
+.card:active {
   transform: translateY(-8px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 } 
@@ -312,7 +317,8 @@ i[data-feather] {
   border-radius: 8px;
 }
 
-#about .skill-item:hover {
+#about .skill-item:hover,
+#about .skill-item:active {
   transform: translateY(-5px);
   background-color: rgba(46, 57, 255, 0.05);
 }
