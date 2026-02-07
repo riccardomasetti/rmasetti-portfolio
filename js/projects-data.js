@@ -28,6 +28,7 @@ const projectsData = [
       technologies: "Python • Deep Learning • Kaggle",
       description: "Challenges solved on Kaggle for a competition linked to the Artificial Neural Networks and Deep Learning course at Politecnico di Milano.\n\nMore information on specific challenges is available inside the repository.",
       detailsLink: "",
+      detailPage: "projects/an2dl.html",
       githubLink: "https://github.com/riccardomasetti/ANNDL-Challenges",
       featured: false
     },
