@@ -1,0 +1,77 @@
+
+<section id="contacts" style="min-height: 100vh; background-image: linear-gradient(rgb(235, 245, 251) , rgb(255, 255, 255));">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h1 class="display-4 fw-bold">Get In <span class="text-primary">Touch</span></h1>
+          <div class="underline mx-auto" style="width: 80px; height: 4px; background-color: #2E39FF; margin-top: 15px;"></div>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="fw-bold mb-4">Contact Form</h3>
+              <form id="contactForm" action="https://formspree.io/f/xqapgrwe" method="POST">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Your Name</label>
+                  <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary px-4 py-2" style="border-radius: 30px;">
+                  <i data-feather="send" class="me-2"></i> Send Message
+                </button>
+              </form>
+              <div id="formSuccess" class="alert alert-success mt-3 d-none">
+                Message sent successfully!
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-6">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="fw-bold mb-4">Contact Info</h3>
+              
+              <div class="d-flex align-items-start mb-4">
+                <div class="bg-primary bg-opacity-10 p-3 rounded me-4">
+                  <i data-feather="mail" style="color: #ffffff; stroke: #ffffff;"></i>
+                </div>
+                <div>
+                  <h5 class="fw-bold mb-1">Email</h5>
+                  <a href="mailto:riccardo.masetti@outlook.com" class="text-decoration-none">riccardo.masetti@outlook.com</a>
+                </div>
+              </div>
+  
+              <div class="mt-5">
+                <h5 class="fw-bold mb-4">Social Profiles</h5>
+                <div class="wrapper">
+                  <a href="https://www.linkedin.com/in/r-masetti/" class="button">
+                     <div class="icon">
+                        <i class="fab fa-linkedin"></i>
+                     </div>
+                     <span>LinkedIn</span>
+                  </a>
+                  <a href="https://github.com/riccardomasetti" class="button">
+                     <div class="icon">
+                        <i class="fab fa-github"></i>
+                     </div>
+                     <span>Github</span>
+                  </a>
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
