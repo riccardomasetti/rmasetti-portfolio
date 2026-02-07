@@ -1,0 +1,40 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+  
+  p, span, div {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  .feather-16 {
+    width: 35px;
+    height: 35px;
+    color: black;
+  }
+  
+  i[data-feather] {
+    stroke: #2E39FF;
+    stroke-width: 2px;
+  }
+  
+  .progress {
+    height: 10px;
+    border-radius: 5px;
+  }

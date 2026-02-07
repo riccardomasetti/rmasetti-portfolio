@@ -1,0 +1,24 @@
+#about, #education, #projects {
+    background-image: linear-gradient(rgb(235, 245, 251), rgb(245, 245, 245));
+  }
+  
+  #about .skill-item {
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+  }
+  
+  #about .skill-item:hover,
+  #about .skill-item:active {
+    transform: translateY(-5px);
+    background-color: rgba(46, 57, 255, 0.05);
+  }
+  
+  #contacts {
+    background-image: linear-gradient(rgb(245, 247, 248), rgb(249, 241, 249));
+  }
+  
+  @media (max-width: 768px) {
+    #about .lead {
+      font-size: 1rem;
+    }
+  }
