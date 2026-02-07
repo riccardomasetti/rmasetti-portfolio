@@ -178,7 +178,7 @@ body {
 
 .profile-img-desktop {
   display: none;
-  height: 90vh;
+  height: clamp(500px, 90vh, 1200px);
   width: auto;
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
   transform: translateX(300px) translateY(0px);
