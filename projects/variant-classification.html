@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variant Classification Project | Riccardo Masetti</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../style.css" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid align">
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item" style="margin-right: 30px;">
+            <a page-section="Home Page" class="nav-link" href="../index.html#home"><i class="feather-16" data-feather="home"></i></a>
+          </li>
+          <li class="nav-item" style="margin-right: 30px;">
+            <a page-section="About" class="nav-link" href="../index.html#about"><i class="feather-16" data-feather="user"></i></a>
+          </li>
+          <li class="nav-item" style="margin-right: 30px;">
+            <a page-section="Education" class="nav-link" href="../index.html#education"><i class="feather-16" data-feather="book-open"></i></a>
+          </li>
+          <li class="nav-item" style="margin-right: 30px;">
+            <a page-section="Projects" class="nav-link" href="../index.html#projects"><i class="feather-16" data-feather="code"></i></a>
+          </li>
+          <li class="nav-item" style="margin-right: 30px;">
+            <a page-section="Contacts" class="nav-link" href="../index.html#contacts"><i class="feather-16" data-feather="mail"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Project Header -->
+  <header class="project-detail-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <a href="../projects.html" class="btn btn-outline-secondary mb-4">
+            <i data-feather="arrow-left" style="width: 18px; height: 18px;"></i> Back to Projects
+          </a>
+          <div class="text-center">
+            <h1 class="display-4 fw-bold mb-3">A Comparative Analysis of Machine Learning Methods for Genomic Variants Classification</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Content -->
+  <section class="project-detail-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          
+          <!-- EMBC Submission Notice -->
+          <div class="alert alert-info mb-4" role="alert">
+            <div class="d-flex align-items-center">
+              <i data-feather="file-text" style="width: 24px; height: 24px; margin-right: 12px;"></i>
+              <div>
+                <strong>Paper Submission:</strong> This research has been submitted to the <strong>IEEE Engineering in Medicine and Biology Conference (EMBC)</strong>. The paper will be published upon acceptance.
+              </div>
+            </div>
+          </div>
+
+          <!-- About Section -->
+          <div class="project-detail-section">
+            <h2>About This Research</h2>
+            <p class="lead">
+              This research project addresses a critical bottleneck in clinical genomics: the accurate classification of genomic variants to determine their clinical significance (benign, pathogenic, or uncertain significance).
+            </p>
+            <p>
+              Conducted at <strong>NECSTLab, Politecnico di Milano</strong>, this work was developed in collaboration with <strong>Samuele Tondelli</strong> (equal contribution) and under the supervision of <strong>Leonardo De Grandis</strong>. The research was also conducted in partnership with <strong>GenoGra srl</strong>.
+            </p>
+            <p>
+              The interpretation of genomic variants remains one of the most challenging aspects of clinical genomics. While next-generation sequencing technologies can detect millions of variants, a substantial proportion are labeled as variants of uncertain significance (VUS), creating diagnostic uncertainty. Current manual interpretation approaches, guided by ACMG/AMP guidelines, are labor-intensive, subjective, and inconsistent across different clinical laboratories.
+            </p>
+            <p>
+              This study systematically evaluates multiple machine learning approaches to provide an evidence-based roadmap for developing computationally efficient and clinically robust variant classification models, optimizing the balance between resource requirements and diagnostic performance.
+            </p>
+          </div>
+
+          <!-- Methodology Section -->
+          <div class="project-detail-section">
+            <h2>Methodology</h2>
+            <p>
+              We conducted a comprehensive comparative analysis, systematically evaluating <strong>4 machine learning models</strong> across <strong>144 different configurations</strong>. The study spanned:
+            </p>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i data-feather="check-circle" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                <strong>Multiple dataset sizes</strong> to assess the impact of training data volume
+              </li>
+              <li class="mb-2">
+                <i data-feather="check-circle" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                <strong>Three feature selection strategies</strong> to evaluate feature importance and redundancy
+              </li>
+              <li class="mb-2">
+                <i data-feather="check-circle" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                <strong>Four classification tasks</strong> including binary and multi-class scenarios
+              </li>
+              <li class="mb-2">
+                <i data-feather="check-circle" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                <strong>dbNSFP v5.0a dataset</strong> with ClinVar annotations as the primary data source
+              </li>
+            </ul>
+            <p>
+              The models evaluated included tree-based classifiers (Random Forest, XGBoost), logistic regression, and neural networks. The experimental pipeline was built using <strong>Snakemake</strong> for workflow management and <strong>Hydra</strong> for configuration management, ensuring reproducibility and scalability of the experiments.
+            </p>
+          </div>
+
+          <!-- Key Findings Section -->
+          <div class="project-detail-section">
+            <h2>Key Findings</h2>
+            <p>
+              Our comprehensive analysis revealed several critical insights for resource-efficient variant classification:
+            </p>
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <i data-feather="award" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                <strong>XGBoost consistently achieved the best performance</strong> across all evaluated configurations
+              </li>
+              <li class="mb-3">
+                <i data-feather="award" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                <strong>All models reached F1 scores exceeding 0.96</strong> for binary classification tasks, demonstrating clinically competitive performance
+              </li>
+              <li class="mb-3">
+                <i data-feather="award" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                <strong>Training set size threshold:</strong> Increasing the training set beyond 100,000 samples yields only marginal performance gains across all models, indicating an optimal data efficiency point
+              </li>
+              <li class="mb-3">
+                <i data-feather="award" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                <strong>Feature selection impact:</strong> Feature selection exerts a more substantial impact on performance than dataset size, especially for multi-class classification tasks
+              </li>
+              <li class="mb-3">
+                <i data-feather="award" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                <strong>VUS classification:</strong> Models trained exclusively on high-confidence benign and pathogenic variants showed high concordance when applied to uncertain variants, despite substantial differences in architecture
+              </li>
+              <li class="mb-3">
+                <i data-feather="award" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                <strong>Feature importance:</strong> SHAP analysis revealed consistent patterns across models, with functional prediction scores and rank scores consistently ranking highest in importance
+              </li>
+            </ul>
+          </div>
+
+          <!-- Results Section with Image Placeholders -->
+          <div class="project-detail-section">
+            <h2>Experimental Results</h2>
+            <p>
+              The following figures illustrate key findings from our comprehensive evaluation:
+            </p>
+            
+            <!-- Figure 1: Performance Analysis -->
+            <div class="mb-4">
+              <h4 class="mb-3">Performance Analysis</h4>
+              <div class="text-center mb-2">
+                <img src="../media/projects/variant-classification/figure1_performance.png" alt="Performance analysis showing F1 scores, stability vs training size, and stability vs features" class="img-fluid rounded shadow-sm">
+              </div>
+              <p class="text-muted small text-center"><em>Figure 1: (a) Best F1 performance across different numbers of classes (2c-5c), showing XGBoost consistently achieving the highest scores. (b) Average performance drop when reducing training data size, demonstrating model stability. (c) Average performance drop when selecting fewer features, revealing that feature selection has substantial impact, especially for multi-class tasks.</em></p>
+            </div>
+
+            <!-- Figure 2: Results Analysis -->
+            <div class="mb-4">
+              <h4 class="mb-3">Model Agreement and Feature Rank Stability</h4>
+              <div class="text-center mb-2">
+                <img src="../media/projects/variant-classification/figure2_results.png" alt="Model agreement matrices and feature rank stability analysis" class="img-fluid rounded shadow-sm">
+              </div>
+              <p class="text-muted small text-center"><em>Figure 2: (a) Strict agreement matrix showing the proportion of VUS samples where pairs of models assigned identical classifications. (b) Relaxed agreement matrix where predictions are considered equivalent if they agree on the broader category (benign vs. pathogenic). (c) Spearman correlation coefficients of feature rankings across different training set sizes, showing Random Forest and Logistic Regression demonstrate higher feature rank stability compared to XGBoost and MLP.</em></p>
+            </div>
+
+            <!-- Figure 3: Top Features by Importance -->
+            <div class="mb-4">
+              <h4 class="mb-3">Top 7 Features by Importance</h4>
+              <div class="text-center mb-2">
+                <img src="../media/projects/variant-classification/figure3_top_features.png" alt="Box plot showing average relative rank of top 7 features based on Shapley values" class="img-fluid rounded shadow-sm">
+              </div>
+              <p class="text-muted small text-center"><em>Figure 3: Average relative rank of seven features based on Shapley values, where lower rank indicates higher importance. BayesDel_addAF_score consistently ranks as the most important feature, followed by BayesDel_addAF_rankscore, MetaRNN_rankscore, and ClinPred_rankscore. Functional prediction scores and rank scores consistently rank highest in importance across all models.</em></p>
+            </div>
+
+          <!-- Clinical Impact Section -->
+          <div class="project-detail-section">
+            <h2>Clinical Impact & Future Directions</h2>
+            <p>
+              These findings establish practical guidelines for resource-efficient variant classification, demonstrating that clinically competitive performance can be achieved with substantially reduced computational requirements. This is particularly important for clinical deployment, where computational resources and training time are often constrained.
+            </p>
+            <p>
+              The study also highlights important areas for future research, including addressing population representation imbalances in genomic databases and exploring more sophisticated feature selection. Additionally, the lower ranking stability observed in neural network models compared to logistic regression suggests opportunities for architecture-specific feature engineering approaches. A promising direction could involve leveraging <strong>Graph Neural Networks (GNNs)</strong> to exploit graph structures that connect genomic elements and preserve rich relational information, potentially capturing complex biological relationships that traditional feature-based approaches might miss.
+            </p>
+          </div>
+
+          <!-- Authors Section -->
+          <div class="project-detail-section">
+            <h2>Research Team</h2>
+            <p>
+              <strong>Authors:</strong> Samuele Tondelli<sup>*</sup>, Riccardo Masetti<sup>*</sup>, Leonardo De Grandis, Guido Walter Di Donato, Marco Domenico Santambrogio
+            </p>
+            <p class="small text-muted">
+              <sup>*</sup>Equal contribution
+            </p>
+            <p>
+              <strong>Institutions:</strong> NECSTLab, Politecnico di Milano, Milan, Italy | GenoGra, Milan, Italy
+            </p>
+          </div>
+
+          <!-- Actions -->
+          <div class="project-actions">
+            <a href="../projects.html" class="btn btn-outline-secondary">
+              <i data-feather="arrow-left" style="width: 18px; height: 18px;"></i> Back to All Projects
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <h5 class="mb-3">Riccardo Masetti</h5>
+          <div class="mb-3">
+            <a href="https://github.com/riccardomasetti" class="text-white me-3" target="_blank">
+              <i data-feather="github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/r-masetti/" class="text-white me-3" target="_blank">
+              <i data-feather="linkedin"></i>
+            </a>
+            <a href="mailto:riccardo.masetti@outlook.com" class="text-white">
+              <i data-feather="mail"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p class="mb-0">© 2025 Riccardo Masetti. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+  <script>
+    // Initialize feather icons
+    feather.replace();
+  </script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROJECT_TITLE | Riccardo Masetti</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../style.css" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar (reused from projects.html) -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid align">
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item" style="margin-right: 30px;">
+            <a page-section="Home Page" class="nav-link" href="../index.html#home"><i class="feather-16" data-feather="home"></i></a>
+          </li>
+          <li class="nav-item" style="margin-right: 30px;">
+            <a page-section="About" class="nav-link" href="../index.html#about"><i class="feather-16" data-feather="user"></i></a>
+          </li>
+          <li class="nav-item" style="margin-right: 30px;">
+            <a page-section="Education" class="nav-link" href="../index.html#education"><i class="feather-16" data-feather="book-open"></i></a>
+          </li>
+          <li class="nav-item" style="margin-right: 30px;">
+            <a page-section="Projects" class="nav-link" href="../index.html#projects"><i class="feather-16" data-feather="code"></i></a>
+          </li>
+          <li class="nav-item" style="margin-right: 30px;">
+            <a page-section="Contacts" class="nav-link" href="../index.html#contacts"><i class="feather-16" data-feather="mail"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Project Header (reusing styles from sections.css) -->
+  <header class="project-detail-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <a href="../projects.html" class="btn btn-outline-secondary mb-4">
+            <i data-feather="arrow-left" style="width: 18px; height: 18px;"></i> Back to Projects
+          </a>
+          <div class="text-center">
+            <!-- REPLACE: Project title -->
+            <h1 class="display-4 fw-bold mb-3">PROJECT_TITLE</h1>
+            <div class="mt-3">
+              <!-- REPLACE: Add technology badges (one span per technology) -->
+              <span class="tech-badge">Technology 1</span>
+              <span class="tech-badge">Technology 2</span>
+              <span class="tech-badge">Technology 3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Content (customize this section for each project) -->
+  <section class="project-detail-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          
+          <!-- About Section -->
+          <div class="project-detail-section">
+            <h2>About This Project</h2>
+            <!-- REPLACE: Add your project description here -->
+            <p class="lead">
+              Brief introduction or main description of the project.
+            </p>
+            <p>
+              More detailed description paragraph 1.
+            </p>
+            <p>
+              More detailed description paragraph 2.
+            </p>
+            <!-- Add more paragraphs as needed -->
+          </div>
+
+          <!-- Mockups/Screenshots Section (OPTIONAL - Remove if not needed) -->
+          <div class="project-detail-section">
+            <h2>Project Screenshots</h2>
+            <div class="row g-3">
+              <!-- REPLACE: Add your mockup images -->
+              <!-- For 2-column layout: -->
+              <div class="col-md-6">
+                <img src="../media/projects/PROJECT_FOLDER/mockup1.jpg" alt="Project mockup 1" class="img-fluid rounded shadow-sm">
+              </div>
+              <div class="col-md-6">
+                <img src="../media/projects/PROJECT_FOLDER/mockup2.jpg" alt="Project mockup 2" class="img-fluid rounded shadow-sm">
+              </div>
+              <!-- For single image full width: -->
+              <!-- <div class="col-12">
+                <img src="../media/projects/PROJECT_FOLDER/mockup1.jpg" alt="Project mockup" class="img-fluid rounded shadow-sm">
+              </div> -->
+            </div>
+          </div>
+
+          <!-- Features Section (OPTIONAL - Remove if not needed) -->
+          <div class="project-detail-section">
+            <h2>Key Features</h2>
+            <ul class="list-unstyled">
+              <!-- REPLACE: Add your features (copy <li> for each feature) -->
+              <li class="mb-2">
+                <i data-feather="check-circle" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                Feature 1
+              </li>
+              <li class="mb-2">
+                <i data-feather="check-circle" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                Feature 2
+              </li>
+              <li class="mb-2">
+                <i data-feather="check-circle" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                Feature 3
+              </li>
+            </ul>
+          </div>
+
+          <!-- Additional Sections (OPTIONAL - Add more sections as needed) -->
+          <!-- Example: Challenges Section -->
+          <!-- <div class="project-detail-section">
+            <h2>Challenges & Solutions</h2>
+            <p>Describe challenges faced and how you solved them...</p>
+          </div> -->
+
+          <!-- Example: Results Section -->
+          <!-- <div class="project-detail-section">
+            <h2>Results & Impact</h2>
+            <p>Describe the results and impact of the project...</p>
+          </div> -->
+
+          <!-- Example: Technical Details Section -->
+          <!-- <div class="project-detail-section">
+            <h2>Technical Details</h2>
+            <p>Technical implementation details, architecture, etc...</p>
+          </div> -->
+
+          <!-- Actions -->
+          <div class="project-actions">
+            <!-- REPLACE: Update GitHub link or remove if not available -->
+            <a href="GITHUB_LINK" target="_blank" class="btn btn-primary me-2">
+              <i data-feather="github" style="width: 18px; height: 18px;"></i> View on GitHub
+            </a>
+            <!-- OPTIONAL: Add Live Demo button if available -->
+            <!-- <a href="LIVE_DEMO_LINK" target="_blank" class="btn btn-success me-2">
+              <i data-feather="external-link" style="width: 18px; height: 18px;"></i> Live Demo
+            </a> -->
+            <a href="../projects.html" class="btn btn-outline-secondary">
+              <i data-feather="arrow-left" style="width: 18px; height: 18px;"></i> Back to All Projects
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (reused from projects.html) -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <h5 class="mb-3">Riccardo Masetti</h5>
+          <div class="mb-3">
+            <a href="https://github.com/riccardomasetti" class="text-white me-3" target="_blank">
+              <i data-feather="github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/r-masetti/" class="text-white me-3" target="_blank">
+              <i data-feather="linkedin"></i>
+            </a>
+            <a href="mailto:riccardo.masetti@outlook.com" class="text-white">
+              <i data-feather="mail"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p class="mb-0">© 2025 Riccardo Masetti. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+  <script>
+    // Initialize feather icons
+    feather.replace();
+  </script>
+</body>
+</html>

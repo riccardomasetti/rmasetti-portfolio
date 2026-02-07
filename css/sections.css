@@ -22,3 +22,54 @@
       font-size: 1rem;
     }
   }
+
+/* Project Detail Page Styles */
+.project-detail-header {
+  background: linear-gradient(rgb(235, 245, 251), rgb(245, 245, 245));
+  padding: 100px 0 60px;
+  margin-top: 70px;
+}
+
+.project-detail-content {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.project-detail-section {
+  margin-bottom: 3rem;
+}
+
+.project-detail-section h2 {
+  color: #0d6efd;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #0d6efd;
+  font-size: 2rem;
+}
+
+.tech-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.project-actions {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.project-card-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card-link:hover .card {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}

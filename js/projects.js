@@ -19,43 +19,50 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // For every project that is contained in project-data.js, a card is creates with its data
     projectsData.forEach(project => {
-        const projectCard = document.createElement('div');
-        projectCard.className = 'col-lg-6 mb-4 project-item';
-        projectCard.setAttribute('data-category', project.category);
-        
-        let projectCardHTML = `
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-body p-4">
-              <div class="d-flex align-items-center mb-3">
-                <span class="bg-primary text-white p-2 me-3 rounded">
-                  <i data-feather="${project.icon}" style="width: 24px; height: 24px;"></i>
-                </span>
-                <h3 class="fw-bold m-0">${project.title}</h3>
-              </div>
-              <p class="text-muted small mb-2">${project.technologies}</p>
-              <p>${project.description}</p>
-              <div class="d-flex mt-4 pt-2">`;
+      const projectCard = document.createElement('div');
+      projectCard.className = 'col-lg-6 mb-4 project-item';
+      projectCard.setAttribute('data-category', project.category);
       
-        // Not showing the github button for Expiration tracker because the repo is not published yet
-        if (project.title !== "Expiration Tracker") {
-          projectCardHTML += `
-            <a href="${project.githubLink}" target="_blank" class="btn btn-outline-dark">
-              <i data-feather="github" style="width: 18px; height: 18px;"></i> GitHub
-            </a>`;
-        }
-        if (project.title === "Expiration Tracker") {
-          projectCardHTML += `<span class="badge bg-warning">UNDER DEVELOPMENT</span>`;
-        }
+      // Create clickable link wrapper
+      const projectLink = document.createElement('a');
+      // Use detailPage if available, otherwise fallback to projects.html
+      projectLink.href = project.detailPage || 'projects.html';
+      projectLink.className = 'text-decoration-none text-dark project-card-link';
+      projectLink.style.cursor = 'pointer';
       
-        projectCardHTML += `
-              </div>
+      let projectCardHTML = `
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <span class="bg-primary text-white p-2 me-3 rounded">
+                <i data-feather="${project.icon}" style="width: 24px; height: 24px;"></i>
+              </span>
+              <h3 class="fw-bold m-0">${project.title}</h3>
             </div>
-          </div>`;
-      
-        projectCard.innerHTML = projectCardHTML;
-      
-        projectsContainer.appendChild(projectCard);
-      });
+            <p class="text-muted small mb-2">${project.technologies}</p>
+            <p>${project.description}</p>
+            <div class="d-flex mt-4 pt-2">`;
+    
+      // Not showing the github button for Expiration tracker because the repo is not published yet
+      if (project.title !== "Expiration Tracker") {
+        projectCardHTML += `
+          <a href="${project.githubLink}" target="_blank" class="btn btn-outline-dark" onclick="event.stopPropagation(); event.preventDefault(); window.open('${project.githubLink}', '_blank');">
+            <i data-feather="github" style="width: 18px; height: 18px;"></i> GitHub
+          </a>`;
+      }
+      if (project.title === "Expiration Tracker") {
+        projectCardHTML += `<span class="badge bg-warning">UNDER DEVELOPMENT</span>`;
+      }
+    
+      projectCardHTML += `
+            </div>
+          </div>
+        </div>`;
+    
+      projectLink.innerHTML = projectCardHTML;
+      projectCard.appendChild(projectLink);
+      projectsContainer.appendChild(projectCard);
+    });
   
     feather.replace();
   
