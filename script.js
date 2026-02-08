@@ -29,13 +29,16 @@ async function initSite() {
     // 4. Initialize Experiences
     initExperiences();
   
-    // 5. Initialize Navbar Mobile Toggle Logic
+    // 5. Initialize Featured Skills
+    initFeaturedSkills();
+  
+    // 6. Initialize Navbar Mobile Toggle Logic
     initNavbarLogic();
   
-    // 6. Initialize Contact Form
+    // 7. Initialize Contact Form
     initContactForm();
   
-    // 7. Handle hash navigation after sections are loaded
+    // 8. Handle hash navigation after sections are loaded
     handleHashNavigation();
   }
 
@@ -162,6 +165,56 @@ function initExperiences() {
     
     feather.replace();
   }
+
+function initFeaturedSkills() {
+  const featuredSkillsContainer = document.getElementById('featured-skills-container');
+  if (!featuredSkillsContainer || typeof skillsData === 'undefined') return;
+
+  // Define featured skills (key skills to show in about section)
+  const featuredSkillNames = ['Python', 'Java', 'C', 'SQL', 'PyTorch', 'Scikit-learn', 'Django', 'Git'];
+  
+  // Get featured skills from data
+  const featuredSkills = featuredSkillNames.map(name => 
+    skillsData.find(skill => skill.name === name)
+  ).filter(skill => skill !== undefined);
+
+  // Icon mapping for skills
+  const skillIcons = {
+    'Python': 'fab fa-python',
+    'Java': 'fab fa-java',
+    'C': 'fas fa-code',
+    'SQL': 'fas fa-database',
+    'PyTorch': 'fas fa-brain',
+    'Scikit-learn': 'fas fa-chart-line',
+    'Django': 'fab fa-python',
+    'Git': 'fab fa-git-alt',
+    'JavaScript': 'fab fa-js',
+    'HTML/CSS': 'fab fa-html5',
+    'BASH': 'fas fa-terminal',
+    'Linux': 'fab fa-linux',
+    'Docker': 'fab fa-docker',
+    'React': 'fab fa-react'
+  };
+
+  featuredSkills.forEach(skill => {
+    const skillCol = document.createElement('div');
+    skillCol.className = 'col-6 col-md-3 mb-4';
+    
+    const skillItem = document.createElement('div');
+    skillItem.className = 'skill-item p-3';
+    
+    const iconClass = skillIcons[skill.name] || 'fas fa-code';
+    skillItem.innerHTML = `
+      <i class="${iconClass} fa-2x mb-3 text-primary"></i>
+      <h5>${skill.name}</h5>
+    `;
+    
+    skillCol.appendChild(skillItem);
+    featuredSkillsContainer.appendChild(skillCol);
+  });
+  
+  feather.replace();
+}
 
 // Start the loading process
 document.addEventListener('DOMContentLoaded', initSite);  

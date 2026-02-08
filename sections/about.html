@@ -70,65 +70,22 @@
         </div>
       </div>
       
-      <!-- TODO: it would be useful to apply DRY in the following section -->
       <div class="row">
         <div class="col-md-12">
           <div class="card border-0 shadow-sm">
             <div class="card-body">
-              <div class="d-flex align-items-center mb-4">
-                <i data-feather="code" class="text-primary me-3"></i>
-                <h3 class="fw-bold mb-0">Technical Skills</h3>
+              <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between mb-4">
+                <div class="d-flex align-items-center mb-3 mb-md-0">
+                  <i data-feather="code" class="text-primary me-3"></i>
+                  <h3 class="fw-bold mb-0">Technical Skills</h3>
+                </div>
+                <a href="skills.html" class="btn btn-outline-primary">
+                  <i data-feather="arrow-right" style="width: 18px; height: 18px;"></i> View All Skills
+                </a>
               </div>
               
-              <div class="row text-center">
-                <div class="col-6 col-md-3 mb-4">
-                  <div class="skill-item p-3">
-                    <i class="fab fa-python fa-2x mb-3 text-primary"></i>
-                    <h5>Python</h5>
-                  </div>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                  <div class="skill-item p-3">
-                    <i class="fab fa-java fa-2x mb-3 text-primary"></i>
-                    <h5>Java</h5>
-                  </div>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                  <div class="skill-item p-3">
-                    <i class="fas fa-database fa-2x mb-3 text-primary"></i>
-                    <h5>SQL</h5>
-                  </div>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                  <div class="skill-item p-3">
-                    <i class="fab fa-html5 fa-2x mb-3 text-primary"></i>
-                    <h5>HTML/CSS</h5>
-                  </div>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                  <div class="skill-item p-3">
-                    <i class="fas fa-code fa-2x mb-3 text-primary"></i>
-                    <h5>C</h5>
-                  </div>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                  <div class="skill-item p-3">
-                    <i class="fab fa-linux fa-2x mb-3 text-primary"></i>
-                    <h5>Linux</h5>
-                  </div>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                  <div class="skill-item p-3">
-                    <i class="fas fa-terminal fa-2x mb-3 text-primary"></i>
-                    <h5>Bash</h5>
-                  </div>
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                  <div class="skill-item p-3">
-                    <i class="fab fa-flutter fa-2x mb-3 text-primary"></i>
-                    <h5>Django & Flutter</h5>
-                  </div>
-                </div>
+              <div class="row text-center" id="featured-skills-container">
+                <!-- Featured skills will be dynamically loaded here -->
               </div>
             </div>
           </div>
