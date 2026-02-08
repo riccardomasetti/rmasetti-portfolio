@@ -37,8 +37,8 @@ const projectsData = [
       category: "web",
       icon: "code",
       technologies: "Django • Python • Web Development",
-      description: "A web application built with Django for managing university missions, originally developed by the AImage Lab at Unimore. As part of my bachelor’s thesis, I contributed by adding new features and optimizing existing workflows to improve the overall user experience.",
-      detailsLink: "projects/missioni.html",
+      description: "A web application built with Django for managing university missions, originally developed by the AImage Lab at Unimore. As part of my bachelor's thesis, I contributed by adding new features and optimizing existing workflows to improve the overall user experience.",
+      detailPage: "projects/missioni.html",
       githubLink: "https://github.com/prittt/missioni-unimore",
       featured: true
     },
@@ -68,7 +68,7 @@ const projectsData = [
         icon: "zap",
         technologies: "Java • JavaFX",
         description: "Flying Koopas is a game developed as part of the OOP exam project at UniMoRe, created through a collaboration with Davide Paltrinieri. Inspired by BBTAN, the goal is to destroy items on the screen using koopas dropped from question marks. Players control the koopas by holding and moving the mouse to determine launch power, and once all items are destroyed, a new game can be started.",
-        detailsLink: "projects/flying-koopas.html",
+        detailPage: "projects/flyingkoopas.html",
         githubLink: "https://github.com/PaltrinieriDavide/FlyingKoopas",
         featured: false
       },
