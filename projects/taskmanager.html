@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Task Manager | Riccardo Masetti</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../style.css" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    pre {
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 1.5rem;
+      overflow-x: auto;
+    }
+    code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Project Header -->
+  <header class="project-detail-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <a href="../projects.html" class="btn btn-outline-secondary mb-4">
+            <i data-feather="arrow-left" style="width: 18px; height: 18px;"></i> Back to Projects
+          </a>
+          <div class="text-center">
+            <h1 class="display-4 fw-bold mb-3">Google Task Manager</h1>
+            <div class="mt-3">
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">Google Apps Script</span>
+              <span class="tech-badge">Google Tasks API</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Content -->
+  <section class="project-detail-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          
+          <!-- About Section -->
+          <div class="project-detail-section">
+            <h2>About This Project</h2>
+            <p class="lead">
+              A Task Manager that automatically organizes Google Tasks by categorizing them into different lists based on their due dates. The script intelligently moves tasks between "Daily", "Weekly", "Monthly", and "GenericTasks" lists to help users maintain a clear and organized task management system.
+            </p>
+            <p>
+              This project was inspired by <strong>Pietro Carrucciu</strong>'s version of the same project. Credits go to him for the original idea.
+            </p>
+          </div>
+
+          <!-- How It Works Section -->
+          <div class="project-detail-section">
+            <h2>How It Works</h2>
+            <p>
+              The Task Manager automatically divides tasks by comparing their due dates with the current date. Every task present in all the lists is evaluated and placed in the appropriate list:
+            </p>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i data-feather="check-circle" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                <strong>Daily:</strong> Tasks that are due today or have already passed
+              </li>
+              <li class="mb-2">
+                <i data-feather="check-circle" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                <strong>Weekly:</strong> Tasks due within the next 7 days
+              </li>
+              <li class="mb-2">
+                <i data-feather="check-circle" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                <strong>Monthly:</strong> Tasks due more than a week from now
+              </li>
+              <li class="mb-2">
+                <i data-feather="check-circle" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                <strong>GenericTasks:</strong> Tasks without a due date
+              </li>
+            </ul>
+            <p>
+              In the second version, an additional behavior was added: when a task initially placed in the "Weekly" list reaches its due date, it is automatically moved to the "Daily" list. Similarly, tasks from the "Monthly" list are moved to the "Weekly" list when their due date falls within the weekly range.
+            </p>
+          </div>
+
+          <!-- Code Overview Section -->
+          <div class="project-detail-section">
+            <h2>Code Overview</h2>
+            <p>
+              The script is implemented as a Google Apps Script function that interacts with the Google Tasks API. Here's the complete code:
+            </p>
+            <pre><code>function categorizeGoogleTasks() {
+  const allLists = Tasks.Tasklists.list().items;
+  const listMap = {};
+  
+  allLists.forEach(l => listMap[l.title] = l.id);
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  
+  const oneWeekLater = new Date(today);
+  oneWeekLater.setDate(today.getDate() + 7);
+
+  allLists.forEach(currentList => {
+    const tasks = Tasks.Tasks.list(currentList.id).items;
+    if (!tasks) return; 
+
+    tasks.forEach(task => {
+      if (task.status !== "needsAction") return;
+
+      let targetListName = "";
+      
+      if (!task.due) {
+        targetListName = "GenericTasks";  
+      } else {
+        const dueDate = new Date(task.due);
+        dueDate.setHours(0, 0, 0, 0);
+
+        if (dueDate <= today) {
+          targetListName = "Daily";
+        } else if (dueDate <= oneWeekLater) {
+          targetListName = "Weekly";
+        } else {
+          targetListName = "Monthly";
+        }
+      }
+
+      const targetListId = listMap[targetListName];
+
+      if (targetListId && currentList.id !== targetListId) {
+        console.log(`Moving "${task.title}" to ${targetListName}`);
+        
+        const newTask = {
+          title: task.title,
+          notes: task.notes || "",
+          due: task.due || null
+        };
+
+        try {
+          Tasks.Tasks.insert(newTask, targetListId);
+          Tasks.Tasks.remove(currentList.id, task.id);
+        } catch (e) {
+          console.error(`Failed to move task: ${task.title}. Error: ${e.message}`);
+        }
+      }
+    });
+  });
+}</code></pre>
+            <h4 class="mt-4 mb-3">Key Features</h4>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i data-feather="code" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                <strong>List Mapping:</strong> Creates a map of all task lists by name for efficient lookup
+              </li>
+              <li class="mb-2">
+                <i data-feather="code" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                <strong>Date Comparison:</strong> Compares task due dates with today and one week later to determine categorization
+              </li>
+              <li class="mb-2">
+                <i data-feather="code" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                <strong>Automatic Movement:</strong> Moves tasks to the appropriate list only if they're not already in the correct list
+              </li>
+              <li class="mb-2">
+                <i data-feather="code" style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                <strong>Error Handling:</strong> Includes try-catch blocks to handle potential API errors gracefully
+              </li>
+            </ul>
+          </div>
+
+          <!-- Installation Section -->
+          <div class="project-detail-section">
+            <h2>Installation</h2>
+            <p>
+              To use this code, you need to create a Google Apps Script project and set up the dependencies for Google Tasks. Follow the official guide:
+            </p>
+            <p>
+              <a href="https://developers.google.com/tasks/quickstart/apps-script?hl=it" target="_blank" class="btn btn-outline-primary">
+                <i data-feather="external-link" style="width: 18px; height: 18px;"></i> Google Tasks Quickstart Guide
+              </a>
+            </p>
+            <p>
+              <strong>Important:</strong> In the first version, it is required to have already created the lists "GenericTasks", "Daily", "Weekly" and "Monthly" (case sensitive) in Google Tasks before running the script.
+            </p>
+          </div>
+
+          <!-- Credits Section -->
+          <div class="project-detail-section">
+            <h2>Credits</h2>
+            <p>
+              Credits to <strong>Pietro Carrucciu</strong> who gave me the idea for the project after seeing his version of the same project.
+            </p>
+            <p>
+              <a href="https://github.com/carruc" target="_blank" class="btn btn-outline-primary">
+                <i data-feather="github" style="width: 18px; height: 18px;"></i> View Pietro's GitHub Profile
+              </a>
+            </p>
+          </div>
+
+          <!-- Actions -->
+          <div class="project-actions">
+            <a href="https://github.com/riccardomasetti/taskmanager" target="_blank" class="btn btn-outline-dark me-2">
+              <i data-feather="github" style="width: 18px; height: 18px;"></i> GitHub
+            </a>
+            <a href="../projects.html" class="btn btn-outline-secondary">
+              <i data-feather="arrow-left" style="width: 18px; height: 18px;"></i> Back to All Projects
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+  <script src="../js/project-loader.js"></script>
+</body>
+</html>
+

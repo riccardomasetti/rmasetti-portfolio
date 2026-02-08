@@ -48,7 +48,7 @@ const projectsData = [
         icon: "check-circle",
         technologies: "Javascript • Google API",
         description: "A task manager application developed to manage and categorize Google Tasks. It allows users to efficiently organize and prioritize their tasks with additional functionality for enhanced productivity.",
-        detailsLink: "projects/task-manager.html",
+        detailPage: "projects/taskmanager.html",
         githubLink: "https://github.com/riccardomasetti/taskmanager",
         featured: true
       },

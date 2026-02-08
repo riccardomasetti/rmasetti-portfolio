@@ -34,7 +34,46 @@ async function initSite() {
   
     // 6. Initialize Contact Form
     initContactForm();
+  
+    // 7. Handle hash navigation after sections are loaded
+    handleHashNavigation();
   }
+
+// Function to scroll to a hash target
+function scrollToHash(hash) {
+  if (!hash) return;
+  
+  const targetElement = document.querySelector(hash);
+  if (targetElement) {
+    // Account for fixed navbar height (CSS already has scroll-padding-top, but we ensure it works)
+    const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - navbarHeight - 20; // 20px extra padding
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+}
+
+// Function to handle hash navigation after sections are loaded
+function handleHashNavigation() {
+  const hash = window.location.hash;
+  if (hash) {
+    // Wait a bit for the DOM to be fully updated
+    setTimeout(() => {
+      scrollToHash(hash);
+    }, 100);
+  }
+  
+  // Also listen for hash changes (when clicking links on the same page)
+  window.addEventListener('hashchange', () => {
+    setTimeout(() => {
+      scrollToHash(window.location.hash);
+    }, 50);
+  });
+}
 
 function initNavbarLogic() {
   const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
