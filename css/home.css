@@ -46,10 +46,10 @@
   @media (max-width: 1199px) {
     #home h1 {
       white-space: normal;
-      margin-top: 60px;
+      margin-top: 80px;
     }
     #home {
-      padding-top: 250px;
+      padding-top: 300px;
       padding-bottom: 40px;
       min-height: auto;
     }
@@ -64,16 +64,41 @@
 
   @media (max-width: 991px) {
     #home {
-      padding-top: 320px;
+      padding-top: 400px;
+    }
+    #home h1 {
+      margin-top: 100px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #home {
+      padding-top: 450px;
     }
   }
 
   @media (max-width: 576px) {
     #home {
-      padding-top: 350px;
+      padding-top: 500px;
     }
     #home h1 {
-      margin-top: 70px;
+      margin-top: 120px;
       font-size: 2.5rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    #home {
+      padding-top: calc(550px + env(safe-area-inset-top, 0px));
+    }
+    #home h1 {
+      margin-top: 150px;
+    }
+  }
+
+  /* Extra padding for very small screens and newer iPhones */
+  @media (max-width: 991px) and (max-height: 900px) {
+    #home {
+      padding-top: calc(450px + env(safe-area-inset-top, 0px));
     }
   }
