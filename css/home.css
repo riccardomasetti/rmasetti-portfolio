@@ -48,7 +48,7 @@
       white-space: normal;
     }
     #home {
-      padding-top: 100px;
+      padding-top: 120px;
       padding-bottom: 40px;
       min-height: auto;
     }
@@ -58,5 +58,11 @@
     .profile-img-mobile {
       max-height: 350px;
       margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 576px) {
+    #home {
+      padding-top: 140px;
     }
   }
