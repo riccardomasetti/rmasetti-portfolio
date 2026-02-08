@@ -41,17 +41,19 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <p class="text-muted small mb-2">${project.technologies}</p>
             <p>${project.description}</p>
-            <div class="d-flex mt-4 pt-2">`;
+            <div class="d-flex align-items-center justify-content-between mt-4 pt-2">`;
     
-      // Not showing the github button for Expiration tracker because the repo is not published yet
-      if (project.title !== "Expiration Tracker") {
+      // Show GitHub button if link exists and project is not under development
+      if (project.githubLink && !project.underDevelopment) {
         projectCardHTML += `
           <a href="${project.githubLink}" target="_blank" class="btn btn-outline-dark" onclick="event.stopPropagation(); event.preventDefault(); window.open('${project.githubLink}', '_blank');">
             <i data-feather="github" style="width: 18px; height: 18px;"></i> GitHub
           </a>`;
       }
-      if (project.title === "Expiration Tracker") {
-        projectCardHTML += `<span class="badge bg-warning">UNDER DEVELOPMENT</span>`;
+      
+      // Show "Under Development" badge if flag is set
+      if (project.underDevelopment) {
+        projectCardHTML += `<span class="badge bg-warning text-white px-3 py-2 fw-bold" style="font-size: 0.9rem;">Under Development</span>`;
       }
     
       projectCardHTML += `

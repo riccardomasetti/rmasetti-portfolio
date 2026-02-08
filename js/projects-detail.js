@@ -39,11 +39,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const descriptionContainer = document.getElementById('project-description');
     descriptionContainer.innerHTML = project.description.replace(/\n/g, '<br>');
     
-    // GitHub link
-    if (project.githubLink && project.title !== "Expiration Tracker") {
+    // GitHub link (only show if link exists and project is not under development)
+    if (project.githubLink && !project.underDevelopment) {
       const githubLink = document.getElementById('project-github-link');
       githubLink.href = project.githubLink;
       githubLink.style.display = 'inline-block';
+    }
+    
+    // Show "Under Development" badge if flag is set
+    if (project.underDevelopment) {
+      const badgeContainer = document.getElementById('project-badges') || document.querySelector('.project-actions');
+      if (badgeContainer) {
+        const badge = document.createElement('span');
+        badge.className = 'badge bg-warning text-white me-2 px-3 py-2 fw-bold';
+        badge.style.fontSize = '0.9rem';
+        badge.textContent = 'Under Development';
+        badgeContainer.insertBefore(badge, badgeContainer.firstChild);
+      }
     }
     
     // Initialize feather icons

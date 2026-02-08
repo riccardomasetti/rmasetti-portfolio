@@ -8,7 +8,8 @@ const projectsData = [
       detailsLink: "",
       //detailPage: "projects/eva.html",
       githubLink: "",
-      featured: false
+      featured: false,
+      underDevelopment: true
     },
     {
       title: "variant classification project",
@@ -19,7 +20,7 @@ const projectsData = [
       detailsLink: "",
       detailPage: "projects/variant-classification.html",
       githubLink: "",
-      featured: false
+      featured: true
     },
     {
       title: "AN2DL Challenges",
@@ -50,7 +51,7 @@ const projectsData = [
         description: "A task manager application developed to manage and categorize Google Tasks. It allows users to efficiently organize and prioritize their tasks with additional functionality for enhanced productivity.",
         detailPage: "projects/taskmanager.html",
         githubLink: "https://github.com/riccardomasetti/taskmanager",
-        featured: true
+        featured: false
       },
     {
       title: "Racing Telemetry System",
@@ -80,7 +81,8 @@ const projectsData = [
       description: "A cross-platform mobile application built with Flutter to help users to track food expiration dates in their fridge.",
       detailsLink: "projects/expiration-tracker.html",
       githubLink: "",
-      featured: false
+      featured: false,
+      underDevelopment: true
     },
 
     
