@@ -102,4 +102,20 @@
       padding-top: calc(450px + env(safe-area-inset-top, 0px)) !important;
     }
   }
+
+  /* Mobile - change section behavior to allow spacing */
+  @media (max-width: 991px) {
+    #home {
+      height: auto !important;
+      min-height: 100vh !important;
+      align-items: flex-start !important;
+      padding-top: 100px !important;
+    }
+    #home .container {
+      margin-top: 0 !important;
+    }
+    #home h1 {
+      margin-top: 0 !important;
+    }
+  }
   
