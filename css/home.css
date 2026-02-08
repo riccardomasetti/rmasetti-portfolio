@@ -46,9 +46,10 @@
   @media (max-width: 1199px) {
     #home h1 {
       white-space: normal;
+      margin-top: 60px;
     }
     #home {
-      padding-top: 120px;
+      padding-top: 250px;
       padding-bottom: 40px;
       min-height: auto;
     }
@@ -61,8 +62,18 @@
     }
   }
 
+  @media (max-width: 991px) {
+    #home {
+      padding-top: 320px;
+    }
+  }
+
   @media (max-width: 576px) {
     #home {
-      padding-top: 140px;
+      padding-top: 350px;
+    }
+    #home h1 {
+      margin-top: 70px;
+      font-size: 2.5rem;
     }
   }
