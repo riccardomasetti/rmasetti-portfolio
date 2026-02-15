@@ -44,6 +44,16 @@ const projectsData = [
       featured: true
     },
     {
+      title: "ODC Challenges",
+      category: "Cybersecurity",
+      icon: "shield",
+      technologies: "Python • GDB • IDA • pwntools • angr • z3",
+      description: "Collection of solved CTF challenges from the Offensive and Defensive Cybersecurity course at Politecnico di Milano, Academic Year 2025/2026. Topics include shellcode, reverse engineering, ROP, heap exploitation, and kernel security.",
+      detailPage: "projects/odc-challenges.html",
+      githubLink: "https://github.com/riccardomasetti/odc-challenges",
+      featured: false
+    },
+    {
         title: "Google Task Manager",
         category: "scripts",
         icon: "check-circle",
