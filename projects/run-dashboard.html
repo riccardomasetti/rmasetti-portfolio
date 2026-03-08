@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Run Dashboard | Riccardo Masetti</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../style.css" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Project Header -->
+  <header class="project-detail-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <a href="../projects.html" class="btn btn-outline-secondary mb-4">
+            <i data-feather="arrow-left" style="width: 18px; height: 18px;"></i> Back to Projects
+          </a>
+          <div class="text-center">
+            <h1 class="display-4 fw-bold mb-3">Run Dashboard</h1>
+            <div class="mt-3">
+              <span class="tech-badge">Next.js 15+</span>
+              <span class="tech-badge">React 19</span>
+              <span class="tech-badge">Tailwind CSS 4</span>
+              <span class="tech-badge">Neon (PostgreSQL)</span>
+              <span class="tech-badge">Leaflet</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Content -->
+  <section class="project-detail-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+
+          <!-- About Section -->
+          <div class="project-detail-section">
+            <h2>About This Project</h2>
+            <p class="lead">
+              This project was born out of being fed up with seeing ads in the middle of my Strava stats, so I decided
+              to build my own dashboard.
+            </p>
+            <p>
+              Actually, <strong>Run Dashboard</strong> isn't meant for everyone. It's a deeply personal tool I built to
+              visualize my training data exactly how I want it. Unlike standard apps, it focuses strictly on what I find
+              useful, pulling data directly from the Strava API and showing it through an interface I designed from
+              scratch.
+            </p>
+          </div>
+
+          <!-- Visual Walkthrough Section -->
+          <div class="project-detail-section">
+            <h2>How the app looks and works</h2>
+
+            <!-- Themes -->
+            <div class="mb-5">
+              <h3>Light and Dark Mode</h3>
+              <p>Since I spend a lot of time staring at charts and maps, I really wanted an interface that’s easy on the
+                eyes. I built a theme system that adapts to system settings or can be toggled with a single click. Both
+                themes keep that "glassmorphism" effect that I’m a big fan of.</p>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <img src="../media/projects/run-dashboard/image1.png" alt="Light Theme"
+                    class="img-fluid rounded shadow-sm border">
+                </div>
+                <div class="col-md-6">
+                  <img src="../media/projects/run-dashboard/image2.png" alt="Dark Theme"
+                    class="img-fluid rounded shadow-sm border">
+                </div>
+              </div>
+            </div>
+
+            <!-- Dashboard / Calendar -->
+            <div class="mb-5">
+              <h3>Calendar and Monthly Stats</h3>
+              <p>To get a quick sense of how my month is going, I created an <strong>interactive calendar</strong>. I
+                took some inspiration from the <strong>GitHub contribution graph</strong> for the layout: each dot
+                represents a workout, and clicking on it jumps straight to that activity's details. On the left, there's
+                a simple summary of my <strong>monthly mileage</strong> with a clean bar chart.</p>
+              <img src="../media/projects/run-dashboard/image1.png" alt="Dashboard Calendar"
+                class="img-fluid rounded shadow-md border w-100 mb-3">
+            </div>
+
+            <!-- Feed -->
+            <div class="mb-5">
+              <h3>Latest Activities</h3>
+              <p>On the main screen, I can immediately see my <strong>last 3 runs</strong> with the key data in
+                plain sight. It’s perfect for a quick check right after syncing. If I want to see the whole history,
+                there's a dedicated page with the full list.</p>
+              <img src="../media/projects/run-dashboard/image2.png" alt="Latest Activities Feed"
+                class="img-fluid rounded shadow-md border w-100 mb-3">
+              <p>The full history view allows me to scroll back through months and years of training sessions
+                effortlessly.</p>
+              <img src="../media/projects/run-dashboard/image6.png" alt="Full Activity List"
+                class="img-fluid rounded shadow-md border w-100 mb-3">
+            </div>
+
+            <!-- Deep Dive -->
+            <div class="mb-5">
+              <h3>Activity Deep Dive</h3>
+              <p>This is where I go to see how I actually performed. Besides the usual stats, I integrated
+                <strong>Leaflet maps</strong> for the route, a dynamic pace chart, and a table with
+                <strong>splits for every single kilometer</strong>. If I took any photos during the run, the app
+                pulls them from Strava and shows them at the bottom.
+              </p>
+              <div class="row g-3">
+                <div class="col-12">
+                  <img src="../media/projects/run-dashboard/image3.png" alt="Activity Details Top"
+                    class="img-fluid rounded shadow-sm border mb-3">
+                </div>
+                <div class="col-md-6">
+                  <img src="../media/projects/run-dashboard/image4.png" alt="Map and Chart"
+                    class="img-fluid rounded shadow-sm border">
+                </div>
+                <div class="col-md-6">
+                  <img src="../media/projects/run-dashboard/image5.png" alt="Splits and Photos"
+                    class="img-fluid rounded shadow-sm border">
+                </div>
+              </div>
+            </div>
+
+            <!-- Access & Hosting -->
+            <div class="mb-5">
+              <h3>Anywhere, Anytime</h3>
+              <p>The app is hosted on <strong>Vercel</strong>, which makes it extremely easy to access. Whether I'm on
+                my laptop at home or checking stats on the go, it works perfectly. The <strong>mobile
+                  responsiveness</strong> was a priority: the interface adapts smoothly to smaller screens, so I have a
+                full-featured dashboard right in my pocket.</p>
+              <p>The best part about building this myself is that it’s completely <strong>customizable</strong>. If I
+                decide I want a new metric or a different chart next week, I can just add it!</p>
+            </div>
+
+            <!-- Security -->
+            <div class="mb-5">
+              <h3>Privacy and Access</h3>
+              <p>Since this is my personal dashboard, I added a simple login screen. It’s a basic system based on
+                passwords and JWT that keeps my data private and ensures only I can trigger the sync with Strava's API.
+              </p>
+              <div class="text-center">
+                <img src="../media/projects/run-dashboard/image7.png" alt="Login Interface"
+                  class="img-fluid rounded shadow-sm border" style="max-height: 400px; width: auto;">
+              </div>
+            </div>
+          </div>
+
+          <!-- Features Section -->
+          <div class="project-detail-section">
+            <h2>Core Functionality</h2>
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <div class="d-flex align-items-start">
+                  <i data-feather="refresh-cw" class="text-primary me-3 mt-1" style="flex-shrink: 0;"></i>
+                  <div>
+                    <strong>Intelligent Strava Sync:</strong> Two-phase engine (Backfilling gaps + Rapid refresh of
+                    recent activities).
+                  </div>
+                </div>
+              </li>
+              <li class="mb-3">
+                <div class="d-flex align-items-start">
+                  <i data-feather="database" class="text-primary me-3 mt-1" style="flex-shrink: 0;"></i>
+                  <div>
+                    <strong>Data Persistence:</strong> Serverless PostgreSQL (Neon) to bypass API rate limits and
+                    improve speed.
+                  </div>
+                </div>
+              </li>
+              <li class="mb-3">
+                <div class="d-flex align-items-start">
+                  <i data-feather="bar-chart-2" class="text-primary me-3 mt-1" style="flex-shrink: 0;"></i>
+                  <div>
+                    <strong>Custom Analytics:</strong> Lightweight SVG/CSS charts for heatmaps and pace analysis, no
+                    external heavy libraries.
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Technical Highlights -->
+          <div class="project-detail-section">
+            <h2>Technical Highlights</h2>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i data-feather="check" class="text-success me-2"></i>
+                <strong>Custom UI Components:</strong> Lightweight, custom-built SVG/CSS charts for "Monthly Distance"
+                and "Activity Heatmaps," prioritizing performance and design consistency.
+              </li>
+              <li class="mb-2">
+                <i data-feather="check" class="text-success me-2"></i>
+                <strong>Rate Limit Resilience:</strong> Built-in error handling for Strava's API rate limits, with a
+                "backfill" logic that resumes data fetching gracefully.
+              </li>
+              <li class="mb-2">
+                <i data-feather="check" class="text-success me-2"></i>
+                <strong>Responsive & Performance-First:</strong> Optimized for all screen sizes with a "mobile-first"
+                approach and Geist typography for a premium look and feel.
+              </li>
+              <li class="mb-2">
+                <i data-feather="check" class="text-success me-2"></i>
+                <strong>Modern Architecture:</strong> Hybrid approach using Server Components for SEO/initial load and
+                Client Components for interactive visualizations.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Status Section -->
+          <div class="project-detail-section">
+            <div class="alert alert-info border-0 shadow-sm d-flex align-items-center">
+              <i data-feather="lock" class="me-3"></i>
+              <div>
+                <strong>Private Codebase:</strong> This project is for personal use and the codebase is private.
+              </div>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="project-actions">
+            <a href="../projects.html" class="btn btn-primary">
+              <i data-feather="arrow-left" style="width: 18px; height: 18px;"></i> Back to All Projects
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+  <script src="../js/project-loader.js"></script>
+</body>
+
+</html>
