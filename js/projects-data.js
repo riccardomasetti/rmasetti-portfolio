@@ -16,8 +16,7 @@ const projectsData = [
     icon: "code",
     technologies: "Django • Python • Web App • RAG • LLMs • Docker",
     description: "eva is an AI-powered application that aims to improve the way students prepare for university exams.\n\nIt exploits RAG techniques and LLMs to generate tests based on students' notes, following the exam format, so that testing can be highly effective.\n\nThe project is currently part of the Switch2Product competition at Politecnico di Milano, and it is being carried on with my cofounders Pietro Carrucciu and Matteo Minotti.\n\nMore details will follow.",
-    detailsLink: "",
-    //detailPage: "projects/eva.html",
+    detailPage: "projects/eva.html",
     githubLink: "",
     featured: false,
     underDevelopment: true
@@ -100,7 +99,7 @@ const projectsData = [
     icon: "smartphone",
     technologies: "Flutter • Dart • Mobile Development",
     description: "A cross-platform mobile application built with Flutter to help users to track food expiration dates in their fridge.",
-    detailsLink: "projects/expiration-tracker.html",
+    detailPage: "projects/expiration-tracker.html",
     githubLink: "",
     featured: false,
     underDevelopment: true
