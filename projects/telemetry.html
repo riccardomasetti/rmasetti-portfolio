@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racing Telemetry System | Riccardo Masetti</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Project Header -->
+    <header class="project-detail-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <a href="../projects.html" class="btn btn-outline-secondary mb-4">
+                        <i data-feather="arrow-left" style="width: 18px; height: 18px;"></i> Back to Projects
+                    </a>
+                    <div class="text-center">
+                        <h1 class="display-4 fw-bold mb-3">Racing Telemetry System</h1>
+                        <div class="mt-3">
+                            <span class="tech-badge">Java</span>
+                            <span class="tech-badge">MQTT</span>
+                            <span class="tech-badge">Gradle</span>
+                            <span class="tech-badge">JSSC</span>
+                            <span class="tech-badge">IoT Gateway</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Content -->
+    <section class="project-detail-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+
+                    <!-- About Section -->
+                    <div class="project-detail-section">
+                        <h2>Bridge between Car and Clouds</h2>
+                        <p class="lead">
+                            Developed for the <strong>MoRe Modena Racing</strong> team, this project acts as the "brain"
+                            on board the vehicle for real-time data acquisition.
+                        </p>
+                        <p>
+                            I worked on this together with my colleagues <strong>Pietro Carrucciu</strong> and
+                            <strong>Davide Paltrinieri</strong>. The goal was to build a reliable gateway that could
+                            bridge the gap between the car's physical electronics (CAN bus) and the digital world of
+                            real-time dashboards and remote analytics.
+                        </p>
+                    </div>
+
+                    <!-- Walkthrough -->
+                    <div class="project-detail-section">
+                        <h2>How it works</h2>
+                        <p>
+                            The application runs on a small PC onboard the car. It handles the constant stream of data
+                            coming from the engine and sensors, making it available for the rest of the team in the
+                            pits.
+                        </p>
+
+                        <div class="mb-5">
+                            <h3>Real-Time Data Pipeline</h3>
+                            <p>The gateway performs a few key tasks every millisecond:</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <div class="d-flex align-items-start">
+                                        <i data-feather="terminal" class="text-primary me-3 mt-1"
+                                            style="flex-shrink: 0;"></i>
+                                        <div>
+                                            <strong>CAN-to-Digital:</strong> It reads raw frames from the vehicle's CAN
+                                            bus through a serial/USB interface and decodes them into actual measurements
+                                            like RPM, temperature, or speed.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3">
+                                    <div class="d-flex align-items-start">
+                                        <i data-feather="refresh-cw" class="text-primary me-3 mt-1"
+                                            style="flex-shrink: 0;"></i>
+                                        <div>
+                                            <strong>Digital Twin Sync:</strong> The app maintains a dynamic software
+                                            model (a "digital twin") of the car's current state, which is updated
+                                            instantly as new data arrives.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3">
+                                    <div class="d-flex align-items-start">
+                                        <i data-feather="upload-cloud" class="text-primary me-3 mt-1"
+                                            style="flex-shrink: 0;"></i>
+                                        <div>
+                                            <strong>MQTT Publishing:</strong> Using the MQTT protocol, it streams this
+                                            data to a remote broker, allowing engineers in the pits to monitor the car's
+                                            health on their dashboards in real-time.
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-5">
+                            <h3>Technical Architecture</h3>
+                            <p>To handle the high demands of racing telemetry without lag, we built it with a
+                                <strong>multithreaded architecture</strong>. One thread is dedicated exclusively to
+                                high-speed serial reading, while another handles data normalization and cloud
+                                synchronization. This ensures that even under heavy load, the car's status is always
+                                accurately reflected.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Technical Stack -->
+                    <div class="project-detail-section">
+                        <h2>Technical Details</h2>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i data-feather="check"
+                                    class="text-success me-2"></i><strong>Language:</strong> Core Java for performance
+                                and portability.</li>
+                            <li class="mb-2"><i data-feather="check" class="text-success me-2"></i><strong>Build
+                                    Tool:</strong> Gradle for dependency management and automated builds.</li>
+                            <li class="mb-2"><i data-feather="check"
+                                    class="text-success me-2"></i><strong>Connectivity:</strong> JSSC (Java Simple
+                                Serial Connector) for hardware communication and Paho MQTT for messaging.</li>
+                            <li class="mb-2"><i data-feather="check" class="text-success me-2"></i><strong>Data
+                                    Formats:</strong> JSON (Jackson/org.json) and Google Protobuf for efficient data
+                                mapping and serialization.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="project-actions mt-5">
+                        <a href="https://github.com/carruc/FS_OnboardPC" target="_blank"
+                            class="btn btn-outline-dark me-2">
+                            <i data-feather="github" style="width: 18px; height: 18px;"></i> GitHub
+                        </a>
+                        <a href="../projects.html" class="btn btn-outline-secondary">
+                            <i data-feather="arrow-left" style="width: 18px; height: 18px;"></i> Back to All Projects
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script src="../js/project-loader.js"></script>
+</body>
+
+</html>

@@ -79,7 +79,7 @@ const projectsData = [
     icon: "bar-chart-2",
     technologies: "Java • MQTT • Real-time Data",
     description: "Developed for the MoRe Modena Racing team together with Pietro Carrucciu and Davide Paltrinieri. This system provides real-time visualization of car sensor data, structured database storage, and multi-level remote access capabilities. (Deprecated)",
-    detailsLink: "projects/telemetry.html",
+    detailPage: "projects/telemetry.html",
     githubLink: "https://github.com/carruc/FS_OnboardPC",
     featured: false
   },
