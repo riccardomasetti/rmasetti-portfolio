@@ -104,7 +104,16 @@ const projectsData = [
     featured: false,
     underDevelopment: true
   },
-
-
+  {
+    title: "Beyond Buttons",
+    category: "hardware",
+    icon: "music",
+    technologies: "Arduino • Python • MIDI • IMU / Motion Sensing • Ableton Live",
+    description: "A hybrid MIDI controller that merges tactile buttons with real-time motion sensing, letting musicians shape sound using their whole body. Built with Pietro Carrucciu and Matteo Minotti — and winner of the NECSTLab hackathon at Politecnico di Milano.",
+    detailPage: "projects/beyond-buttons.html",
+    githubLink: "",
+    featured: false,
+    private: true
+  },
 
 ];

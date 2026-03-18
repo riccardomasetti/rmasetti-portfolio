@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond Buttons | Riccardo Masetti</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Project Header -->
+    <header class="project-detail-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <a href="../projects.html" class="btn btn-outline-secondary mb-4">
+                        <i data-feather="arrow-left" style="width: 18px; height: 18px;"></i> Back to Projects
+                    </a>
+                    <div class="text-center">
+                        <h1 class="display-4 fw-bold mb-3">Beyond Buttons</h1>
+                        <div class="mt-3">
+                            <span class="tech-badge">Arduino</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">MIDI</span>
+                            <span class="tech-badge">IMU / Motion Sensing</span>
+                            <span class="tech-badge">Ableton Live</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Content -->
+    <section class="project-detail-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+
+                    <!-- About Section -->
+                    <div class="project-detail-section">
+                        <h2>About This Project</h2>
+                        <div class="text-center mb-4">
+                            <img src="../media/projects/bb/img4.png" alt="Beyond Buttons Logo"
+                                class="img-fluid rounded shadow-sm" style="max-height: 320px; width: auto;">
+                        </div>
+                        <p class="lead">
+                            There's music beyond buttons. And that's exactly the idea.
+                        </p>
+                        <p>
+                            <strong>Beyond Buttons</strong> is a MIDI controller built during the <em>Creativity,
+                                Science and Innovation</em> course at Politecnico di Milano, alongside <strong>Pietro
+                                Carrucciu</strong> and <strong>Matteo Minotti</strong>. All three of us have a passion
+                            for music, and talking about it we kept coming back to the same thing: the gap between
+                            playing a physical instrument and working inside a DAW. One feels expressive and alive, the
+                            other precise but cold. That conversation turned into a project.
+                        </p>
+                        <p>
+                            The result is a handheld controller where buttons and body movement work together to shape
+                            sound in real time. <strong>It won the NECSTLab hackathon at Politecnico di Milano.</strong>
+                        </p>
+                    </div>
+
+                    <!-- Hackathon Photos -->
+                    <div class="project-detail-section">
+                        <h2>At the Hackathon</h2>
+                        <p>A Bosch-sponsored hackathon is where the project was formally introduced and where we took it
+                            home with a win. Here are some shots from the event.</p>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <img src="../media/projects/bb/img1.jpg" alt="Hackathon photo 1"
+                                    class="img-fluid rounded shadow-sm border">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="../media/projects/bb/img2.jpg" alt="Hackathon photo 2"
+                                    class="img-fluid rounded shadow-sm border">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="../media/projects/bb/img3.jpg" alt="Hackathon photo 3"
+                                    class="img-fluid rounded shadow-sm border">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- How it Works -->
+                    <div class="project-detail-section">
+                        <h2>How It Works</h2>
+                        <p>
+                            The device sits in your hand like a remote control. Eight buttons on top let you play notes
+                            like a simplified keyboard. But what makes it interesting is the motion layer: when you
+                            tilt, shake, or swing the controller, the onboard <strong>IMU sensor</strong> picks up those
+                            movements and translates them into real-time MIDI parameters — reverb, delay, pitch
+                            modulation, whatever you've mapped.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <div class="d-flex align-items-start">
+                                    <i data-feather="cpu" class="text-primary me-3 mt-1" style="flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong>Nicla Sense ME (Bosch):</strong> Samples motion data at 200Hz via its
+                                        IMU. The raw data goes through a smoothing algorithm (Exponential Moving
+                                        Average) to make the effect feel natural and musical rather than jittery.
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-3">
+                                <div class="d-flex align-items-start">
+                                    <i data-feather="radio" class="text-primary me-3 mt-1" style="flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong>Arduino MKR WiFi 1010:</strong> Acts as the bridge between the sensor
+                                        board and the computer, also handling the 8 physical buttons with debouncing
+                                        filters applied.
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-3">
+                                <div class="d-flex align-items-start">
+                                    <i data-feather="code" class="text-primary me-3 mt-1" style="flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong>Python Backend:</strong> Reads the serial stream from Arduino, converts
+                                        sensor values into MIDI signals, and routes them to the DAW. It includes default
+                                        presets so you can just plug in and start playing.
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Design Philosophy -->
+                    <div class="project-detail-section">
+                        <h2>The Idea Behind It</h2>
+                        <p>
+                            Most MIDI controllers force a choice: you either play an instrument <em>or</em> tweak
+                            controls. Beyond Buttons lets you do both at once. The design was inspired by game
+                            controllers and TV remotes — things that feel natural in your hand — to keep the learning
+                            curve as low as possible.
+                        </p>
+                        <p>
+                            We also talked to producers like <em>Connor Golden</em> and <em>Chuck Sutton</em>, and the
+                            message was clear: a tool like this needs to be fun and intuitive within the first 30
+                            minutes, or people won't stick with it. Default presets for Ableton Live were a core part of
+                            the design for exactly that reason.
+                        </p>
+                    </div>
+
+                    <!-- Private codebase notice -->
+                    <div class="project-detail-section">
+                        <div class="alert alert-info border-0 shadow-sm d-flex align-items-center">
+                            <i data-feather="lock" class="me-3"></i>
+                            <div>
+                                <strong>Academic Project:</strong> Developed as part of the CSI course at Politecnico di
+                                Milano. The codebase is not publicly available.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="project-actions">
+                        <a href="../projects.html" class="btn btn-outline-secondary">
+                            <i data-feather="arrow-left" style="width: 18px; height: 18px;"></i> Back to All Projects
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script src="../js/project-loader.js"></script>
+</body>
+
+</html>
