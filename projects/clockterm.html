@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClockTerm | Riccardo Masetti</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Project Header -->
+    <header class="project-detail-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <a href="../projects.html" class="btn btn-outline-secondary mb-4">
+                        <i data-feather="arrow-left" style="width: 18px; height: 18px;"></i> Back to Projects
+                    </a>
+                    <div class="text-center">
+                        <h1 class="display-4 fw-bold mb-3">ClockTerm</h1>
+                        <p class="text-muted lead">A terminal clock. That's it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Content -->
+    <section class="project-detail-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+
+                    <!-- About Section -->
+                    <div class="project-detail-section">
+                        <h2>About This Project</h2>
+                        <p class="lead">
+                            A terminal clock. That's it.
+                        </p>
+                        <p>
+                            Vibecoded in an afternoon while studying a subject that somehow makes you want to stare at
+                            anything
+                            except the actual slides. ClockTerm lives in your terminal, tells you the time in
+                            <strong>giant ASCII blocks</strong>, and asks absolutely nothing of you in return.
+                        </p>
+                        <p>
+                            No notifications. No tabs. No "you might also like". Just the cruel, unstoppable passage of
+                            time,
+                            rendered — right there in your face. Quietly judging you for opening a new browser tab
+                            anyway.
+                        </p>
+                    </div>
+
+                    <!-- Preview Image -->
+                    <div class="mb-4 text-center">
+                        <img src="../media/projects/clockterm/img1.png"
+                            alt="ClockTerm running in a terminal — time displayed in giant ASCII blocks"
+                            class="img-fluid rounded shadow-sm">
+
+                    </div>
+
+                    <!-- What It Does Section -->
+                    <div class="project-detail-section">
+                        <h2>What It Does</h2>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <i data-feather="clock"
+                                    style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                                <strong>Displays the current time</strong> in 24-hour format in large ASCII art blocks
+                            </li>
+                            <li class="mb-2">
+                                <i data-feather="terminal"
+                                    style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                                <strong>Shows seconds</strong> in a smaller font to the right of the main time
+                            </li>
+                            <li class="mb-2">
+                                <i data-feather="calendar"
+                                    style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                                <strong>Displays the current date</strong> at the bottom of the screen
+                            </li>
+                            <li class="mb-2">
+                                <i data-feather="maximize"
+                                    style="width: 20px; height: 20px; color: #0d6efd; margin-right: 10px;"></i>
+                                <strong>Adapts to your terminal size</strong> — always perfectly centered
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <!-- How to Run Section -->
+                    <div class="project-detail-section">
+                        <h2>How to Run It</h2>
+                        <p>
+                            No dependencies. No setup. No 47-step installation guide. Just Python and a terminal:
+                        </p>
+                        <pre class="bg-light p-3 rounded"><code>git clone https://github.com/riccardomasetti/clockterm
+cd clockterm
+python3 clock.py</code></pre>
+                        <p class="mt-2 text-muted small">
+                            Works on any terminal. Type <code>q</code> or press <code>Ctrl+C</code> to exit (if you ever
+                            decide to go back to
+                            studying).
+                        </p>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="project-actions">
+                        <a href="https://github.com/riccardomasetti/clockterm" target="_blank"
+                            class="btn btn-outline-dark me-2">
+                            <i data-feather="github" style="width: 18px; height: 18px;"></i> GitHub
+                        </a>
+                        <a href="../projects.html" class="btn btn-outline-secondary">
+                            <i data-feather="arrow-left" style="width: 18px; height: 18px;"></i> Back to All Projects
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script src="../js/project-loader.js"></script>
+</body>
+
+</html>
