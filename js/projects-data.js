@@ -115,5 +115,15 @@ const projectsData = [
     featured: false,
     private: true
   },
+  {
+    title: "ClockTerm",
+    category: "scripts",
+    icon: "clock",
+    technologies: "Python",
+    description: "A terminal clock. That's it.\n\nVibecoded in an afternoon while studying a subject that somehow makes you want to stare at anything except the actual slides. It displays the current time in giant ASCII blocks, shows seconds, and renders the date below. It asks nothing of you in return — no notifications, no tabs, no suggestions. Just the cruel, unstoppable passage of time, quietly judging you.",
+    detailPage: "projects/clockterm.html",
+    githubLink: "https://github.com/riccardomasetti/clockterm",
+    featured: false
+  },
 
 ];
