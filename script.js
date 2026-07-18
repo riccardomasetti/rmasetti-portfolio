@@ -1,7 +1,14 @@
+const navigationEntry = performance.getEntriesByType('navigation')[0];
+const pageWasReloaded = navigationEntry?.type === 'reload';
+
+if (pageWasReloaded && 'scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
 // Function to load an HTML file into a specific element
 async function loadSection(elementId, filePath) {
   try {
-    const response = await fetch(filePath);
+    const response = await fetch(filePath, { cache: 'no-store' });
     const content = await response.text();
     document.getElementById(elementId).innerHTML = content;
   } catch (error) {
@@ -15,6 +22,7 @@ async function initSite() {
   await loadSection('nav-placeholder', 'sections/navbar.html');
   await loadSection('home-placeholder', 'sections/home.html');
   await loadSection('about-placeholder', 'sections/about.html');
+  await loadSection('experience-placeholder', 'sections/experience.html');
   await loadSection('education-placeholder', 'sections/education.html');
   await loadSection('projects-placeholder', 'sections/projects_featured.html');
   await loadSection('contacts-placeholder', 'sections/contacts.html');
@@ -62,6 +70,13 @@ function scrollToHash(hash) {
 
 // Function to handle hash navigation after sections are loaded
 function handleHashNavigation() {
+  if (pageWasReloaded) {
+    history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    return;
+  }
+
   const hash = window.location.hash;
   if (hash) {
     // Wait a bit for the DOM to be fully updated
@@ -155,29 +170,6 @@ function initFeaturedProjects() {
   feather.replace(); // Refresh icons for the newly added projects
 }
 
-function initExperiences() {
-  const experiencesContainer = document.getElementById('experiences-container');
-  if (!experiencesContainer || typeof experiencesData === 'undefined') return;
-
-  experiencesData.forEach((experience, index) => {
-    const experienceCard = document.createElement('div');
-    experienceCard.className = 'col-md-6 mb-3' + (index >= experiencesData.length - 2 ? ' mb-md-0' : '');
-
-    experienceCard.innerHTML = `
-        <div class="d-flex mb-2">
-          <i data-feather="${experience.icon}" class="text-primary me-2"></i>
-          <h5 class="fw-bold">${experience.title}</h5>
-        </div>
-        <p class="text-muted mb-0">${experience.period}</p>
-        <p>${experience.description}</p>
-      `;
-
-    experiencesContainer.appendChild(experienceCard);
-  });
-
-  feather.replace();
-}
-
 function initFeaturedSkills() {
   const featuredSkillsContainer = document.getElementById('featured-skills-container');
   if (!featuredSkillsContainer || typeof skillsData === 'undefined') return;
@@ -229,4 +221,4 @@ function initFeaturedSkills() {
 }
 
 // Start the loading process
-document.addEventListener('DOMContentLoaded', initSite);  
+document.addEventListener('DOMContentLoaded', initSite);
