@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UWB Multi-Person Localization | Riccardo Masetti</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../style.css" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <header class="project-detail-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <a href="../projects.html" class="btn btn-outline-secondary mb-4">
+            <i data-feather="arrow-left" style="width: 18px; height: 18px;"></i> Back to Projects
+          </a>
+          <div class="text-center">
+            <h1 class="display-4 fw-bold mb-3">TinyML UWB Multi-Person Localization</h1>
+            <p class="text-muted lead">Embedded and Edge Artificial Intelligence Project</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="project-detail-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="project-detail-section">
+            <h2>About This Project</h2>
+            <p class="lead">
+              This project explores privacy-preserving indoor localization using Ultra-Wideband radar and a compact
+              neural network designed for edge deployment.
+            </p>
+            <p>
+              Developed with <strong>Samuele Tondelli</strong> for the Embedded and Edge Artificial Intelligence course
+              at <strong>Politecnico di Milano</strong>, the system estimates the two-dimensional positions of up to four
+              people without cameras or wearable devices. It processes raw Channel Impulse Response measurements from
+              six UWB radars and runs as a fully quantized INT8 TensorFlow Lite model.
+            </p>
+          </div>
+
+          <div class="alert alert-info" role="alert">
+            This page provides a concise overview of the project. The complete codebase is available on
+            <strong>GitHub</strong>, while the full methodology, experiments, and analysis are documented in the
+            <strong>complete project report</strong>.
+            <div class="mt-3">
+              <a href="../media/projects/uwb-multi-person-localization/report.pdf" target="_blank"
+                class="btn btn-primary me-2">
+                <i data-feather="file-text" style="width: 18px; height: 18px;"></i> View Full Report
+              </a>
+              <a href="https://github.com/riccardomasetti/uwb-multi-person-localization" target="_blank"
+                class="btn btn-outline-dark">
+                <i data-feather="github" style="width: 18px; height: 18px;"></i> GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="project-detail-section">
+            <h2>Problem Setting</h2>
+            <p>
+              Six fixed radars, each with three antennas, surround a 4.8 m × 7.2 m room and sample complex UWB signals
+              at 25 Hz. The dataset contains 180,000 frames covering an empty room and scenarios with up to four people.
+              Besides localizing each person, the model must determine how many people are present and avoid false
+              detections when the room is empty.
+            </p>
+            <div class="text-center mb-2">
+              <img src="../media/projects/uwb-multi-person-localization/room-layout.png"
+                alt="Room layout with six UWB radars and four people" class="img-fluid rounded shadow-sm">
+            </div>
+            <p class="text-muted small text-center"><em>Acquisition room layout: radars are shown in blue and example
+                person positions in red.</em></p>
+          </div>
+
+          <div class="project-detail-section">
+            <h2>Signal Processing Pipeline</h2>
+            <p>
+              The pipeline removes static reflections with exponential-moving-average background subtraction, then
+              groups 50 consecutive frames into a two-second input window. A temporal FFT transforms each complex signal
+              into a range-frequency representation. Its real component, imaginary component, and amplitude preserve
+              complementary phase and reflection-strength information while selected bins keep the input compact.
+            </p>
+            <div class="text-center mb-2">
+              <img src="../media/projects/uwb-multi-person-localization/range-frequency-representation.png"
+                alt="Real, imaginary, and amplitude range-frequency maps with a ground-truth trajectory"
+                class="img-fluid rounded shadow-sm">
+            </div>
+            <p class="text-muted small text-center"><em>Example FFT representation and the corresponding ground-truth
+                trajectory.</em></p>
+          </div>
+
+          <div class="project-detail-section">
+            <h2>Model Architecture</h2>
+            <p>
+              Separate convolutional encoders process the complex FFT components and their amplitude. The resulting
+              tokens from all six radars are fused by one lightweight multi-head self-attention layer. Four independent
+              prediction heads each output a 2D position and a presence score, allowing the same model to handle a
+              variable number of people. Hungarian matching assigns these unordered predictions to the ground truth
+              during training.
+            </p>
+            <div class="text-center mb-2">
+              <img src="../media/projects/uwb-multi-person-localization/model-architecture.png"
+                alt="Dual-encoder UWB localization model architecture" class="img-fluid rounded shadow-sm">
+            </div>
+            <p class="text-muted small text-center"><em>The final dual-encoder architecture, with attention-based radar
+                fusion and four parallel detection heads.</em></p>
+          </div>
+
+          <div class="project-detail-section">
+            <h2>Results</h2>
+            <p>
+              Post-training INT8 quantization reduced the model and activation memory substantially while preserving
+              almost all of the floating-point model's performance. The final model satisfies both embedded deployment
+              constraints: a model smaller than 800 KB and an activation arena below 300 KB.
+            </p>
+            <div class="table-responsive">
+              <table class="table table-striped align-middle">
+                <thead>
+                  <tr>
+                    <th scope="col">Metric</th>
+                    <th scope="col">Final INT8 model</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Average localization error</td>
+                    <td>0.4862 m</td>
+                  </tr>
+                  <tr>
+                    <td>Count accuracy</td>
+                    <td>86.7%</td>
+                  </tr>
+                  <tr>
+                    <td>F1 score</td>
+                    <td>0.8242</td>
+                  </tr>
+                  <tr>
+                    <td>TensorFlow Lite model size</td>
+                    <td>551.2 KB</td>
+                  </tr>
+                  <tr>
+                    <td>Activation arena</td>
+                    <td>266.6 KB</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="project-detail-section">
+            <h2>Key Takeaway</h2>
+            <p>
+              The experiments showed that preserving the structure of the radar signal was more effective than simply
+              increasing model complexity. Frequency-domain features, separate complex and amplitude branches, compact
+              attention-based fusion, and quantization-aware checkpoint selection produced a deployable model with only
+              a small performance loss after conversion to INT8.
+            </p>
+          </div>
+
+          <div class="project-actions">
+            <a href="../projects.html" class="btn btn-outline-secondary">
+              <i data-feather="arrow-left" style="width: 18px; height: 18px;"></i> Back to All Projects
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+  <script src="../js/project-loader.js"></script>
+</body>
+
+</html>

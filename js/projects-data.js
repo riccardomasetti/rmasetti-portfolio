@@ -29,8 +29,18 @@ const projectsData = [
     description: "Research project conducted at NECSTLab, Politecnico di Milano, as part of the Leonardo project in collaboration with Samuele Tondelly and under the supervision of Leonardo De Grandis.\n\nCurrently contributing to a pangenomic variant classification project using Graph Machine Learning techniques.\n\nThe research activities focus on applying advanced AI and data-driven methods to computational biology and genomics, with the goal of improving variant classification accuracy in genomic datasets. the project is still ongoing.",
     detailsLink: "",
     detailPage: "projects/variant-classification.html",
-    githubLink: "",
+    githubLink: "https://github.com/necst/variant-classification-ml",
     featured: true
+  },
+  {
+    title: "UWB Multi-Person Localization",
+    category: "Machine & Deep Learning",
+    icon: "radio",
+    technologies: "TinyML • TensorFlow Lite • UWB Radar • Python",
+    description: "An edge AI system developed with Samuele Tondelli for the Embedded and Edge Artificial Intelligence course at Politecnico di Milano. It estimates the 2D positions of up to four people from UWB radar signals using a compact, privacy-preserving INT8 model designed for microcontroller deployment.",
+    detailPage: "projects/uwb-multi-person-localization.html",
+    githubLink: "https://github.com/riccardomasetti/uwb-multi-person-localization",
+    featured: false
   },
   {
     title: "AN2DL Challenges",
