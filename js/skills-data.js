@@ -1,71 +1,82 @@
-const categoryOrder = [
-  "Programming Languages",
-  "ML & Computer Vision",
-  "Web Frameworks",
-  "Mobile Developing",
-  "Dev Tools",
-  "Microsoft office",
-  "Mathematics",
-  "Soft Skills"
+const skillSections = [
+  {
+    title: "Daily Workflow & Main Tools",
+    description: "Programs, environments, AI frameworks, and tools I use on a daily basis for research, development, and daily workflows.",
+    skills: [
+      { name: "Python", icon: "fab fa-python" },
+      { name: "PyTorch", icon: "fas fa-brain" },
+      { name: "PyG (PyTorch Geometric)", icon: "fas fa-project-diagram" },
+      { name: "PyTorch Lightning", icon: "fas fa-bolt" },
+      { name: "Hydra", icon: "fas fa-sitemap" },
+      { name: "Git", icon: "fab fa-git-alt" },
+      { name: "GitHub", icon: "fab fa-github" },
+      { name: "BASH", icon: "fas fa-terminal" },
+      { name: "Linux (Linux Mint)", icon: "fab fa-linux" },
+      { name: "SSH", icon: "fas fa-key" },
+      { name: "Tailscale", icon: "fas fa-shield-alt" },
+      { name: "Codex & AI Tooling", icon: "fas fa-robot" }
+    ]
+  },
+  {
+    title: "Programming Languages",
+    description: "Programming and scripting languages I work or I've worked with, listed in <strong>order of confidence</strong> and practical proficiency.",
+    skills: [
+      { name: "C", icon: "fas fa-code" },
+      { name: "Python", icon: "fab fa-python" },
+      { name: "SQL", icon: "fas fa-database" },
+      { name: "BASH", icon: "fas fa-terminal" },
+      { name: "Java", icon: "fab fa-java" },
+      { name: "JavaScript", icon: "fab fa-js" },
+      { name: "HTML / CSS", icon: "fab fa-html5" },
+      { name: "Assembly (x86 / ARM)", icon: "fas fa-microchip" },
+      { name: "C++", icon: "fas fa-code" },
+      { name: "MATLAB", icon: "fas fa-square-root-alt" },
+      { name: "Dart", icon: "fas fa-mobile-alt" }
+    ]
+  },
+  {
+    title: "Other Frameworks & Tools",
+    description: "Technologies, frameworks, libraries, and developer tools I have used across research, academic courses, and personal projects.",
+    skills: [
+      { name: "Django & DRF", icon: "fab fa-python" },
+      { name: "Next.js & React", icon: "fab fa-react" },
+      { name: "Scikit-learn", icon: "fas fa-chart-line" },
+      { name: "Docker", icon: "fab fa-docker" },
+      { name: "Snakemake", icon: "fas fa-stream" },
+      { name: "TensorFlow & TinyML", icon: "fas fa-microchip" },
+      { name: "NumPy & Pandas", icon: "fas fa-table" },
+      { name: "Matplotlib & Seaborn", icon: "fas fa-chart-bar" },
+      { name: "Tailwind CSS", icon: "fas fa-palette" },
+      { name: "GDB & PwnTools", icon: "fas fa-bug" },
+      { name: "IDA Pro & Ghidra", icon: "fas fa-search" },
+      { name: "angr & z3", icon: "fas fa-calculator" },
+      { name: "Wireshark", icon: "fas fa-network-wired" },
+      { name: "MQTT", icon: "fas fa-broadcast-tower" },
+      { name: "Arduino & Embedded", icon: "fas fa-microchip" },
+      { name: "Flutter", icon: "fas fa-mobile-alt" }
+    ]
+  },
+  {
+    title: "Soft Skills & Methodologies",
+    description: "Personal and interpersonal strengths developed through teamwork, research, and continuous learning.",
+    skills: [
+      { name: "Problem Solving", icon: "fas fa-puzzle-piece" },
+      { name: "Teamwork & Collaboration", icon: "fas fa-users" },
+      { name: "Fast Learner & Adaptability", icon: "fas fa-lightbulb" },
+      { name: "Communication", icon: "fas fa-comments" },
+      { name: "Time Management", icon: "fas fa-clock" },
+      { name: "Project Ownership", icon: "fas fa-tasks" }
+    ]
+  }
 ];
 
-const skillsData = [
-  // Programming Languages
-  { name: "Python", level: 100, category: "Programming Languages" },
-  { name: "Java", level: 100, category: "Programming Languages" },
-  { name: "C", level: 100, category: "Programming Languages" },
-  { name: "JavaScript", level: 50, category: "Programming Languages" },
-  { name: "HTML/CSS", level: 70, category: "Programming Languages" },
-  { name: "SQL", level: 100, category: "Programming Languages" },
-  { name: "BASH", level: 70, category: "Programming Languages" },
-  { name: "MATLAB", level: 50, category: "Programming Languages" },
-  { name: "Dart", level: 30, category: "Programming Languages" },
-
-  // ML & Computer Vision
-  { name: "PyTorch", level: 90, category: "ML & Computer Vision" },
-  { name: "Scikit-learn", level: 90, category: "ML & Computer Vision" },
-  { name: "NumPy", level: 80, category: "ML & Computer Vision" },
-  { name: "Matplotlib", level: 80, category: "ML & Computer Vision" },
-  { name: "Hydra", level: 100, category: "ML & Computer Vision" },
-  { name: "Torchvision", level: 70, category: "ML & Computer Vision" },
-  { name: "TensorFlow", level: 50, category: "ML & Computer Vision" },
-
-  // Development Tools
-  { name: "Git", level: 100, category: "Dev Tools" },
-  { name: "Linux", level: 100, category: "Dev Tools" },
-  { name: "Docker", level: 50, category: "Dev Tools" },
-  { name: "GCC", level: 50, category: "Dev Tools" },
-  { name: "GDB", level: 70, category: "Dev Tools" },
-  { name: "Wireshark", level: 30, category: "Dev Tools" },
-  { name: "PwnTools", level: 80, category: "Dev Tools" },
-
-  // Web Frameworks
-  { name: "Django", level: 100, category: "Web Frameworks" },
-  { name: "Django REST Framework", level: 100, category: "Web Frameworks" },
-  { name: "React", level: 70, category: "Web Frameworks" },
-  { name: "Flask", level: 20, category: "Web Frameworks" },
-
-  // Mobile
-  { name: "Flutter", level: 50, category: "Mobile Developing" },
-
-  // Mathematics (no level display)
-  { name: "Linear Algebra", category: "Mathematics", showLevel: false },
-  { name: "Calculus", category: "Mathematics", showLevel: false },
-  { name: "Statistics", category: "Mathematics", showLevel: false },
-  { name: "Probability Theory", category: "Mathematics", showLevel: false },
-
-  // Microsoft Office
-  { name: "Microsoft Excel", level: 90, category: "Microsoft office" },
-  { name: "Microsoft Word", level: 100, category: "Microsoft office" },
-  { name: "Microsoft PowerPoint", level: 100, category: "Microsoft office" },
-  { name: "VBA", level: 70, category: "Microsoft office" },
-
-  // Soft Skills (no level display)
-  { name: "Problem Solving", category: "Soft Skills", showLevel: false },
-  { name: "Teamwork", category: "Soft Skills", showLevel: false },
-  { name: "Communication", category: "Soft Skills", showLevel: false },
-  { name: "Time Management", category: "Soft Skills", showLevel: false },
-  { name: "Leadership", category: "Soft Skills", showLevel: false },
-  { name: "Adaptability", category: "Soft Skills", showLevel: false },
+const featuredSkills = [
+  { name: "Python", icon: "fab fa-python" },
+  { name: "PyTorch", icon: "fas fa-brain" },
+  { name: "PyG", icon: "fas fa-project-diagram" },
+  { name: "Django", icon: "fab fa-python" },
+  { name: "C / C++", icon: "fas fa-code" },
+  { name: "Java", icon: "fab fa-java" },
+  { name: "Linux Mint", icon: "fab fa-linux" },
+  { name: "Git", icon: "fab fa-git-alt" }
 ];
-

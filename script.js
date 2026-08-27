@@ -172,44 +172,29 @@ function initFeaturedProjects() {
 
 function initFeaturedSkills() {
   const featuredSkillsContainer = document.getElementById('featured-skills-container');
-  if (!featuredSkillsContainer || typeof skillsData === 'undefined') return;
+  if (!featuredSkillsContainer) return;
 
-  // Define featured skills (key skills to show in about section)
-  const featuredSkillNames = ['Python', 'Java', 'C', 'SQL', 'PyTorch', 'Scikit-learn', 'Django', 'Git'];
+  const skillsToDisplay = (typeof featuredSkills !== 'undefined') ? featuredSkills : [
+    { name: 'Python', icon: 'fab fa-python' },
+    { name: 'PyTorch', icon: 'fas fa-brain' },
+    { name: 'Django', icon: 'fab fa-python' },
+    { name: 'C / C++', icon: 'fas fa-code' },
+    { name: 'Java', icon: 'fab fa-java' },
+    { name: 'Next.js & React', icon: 'fab fa-react' },
+    { name: 'Linux', icon: 'fab fa-linux' },
+    { name: 'Git', icon: 'fab fa-git-alt' }
+  ];
 
-  // Get featured skills from data
-  const featuredSkills = featuredSkillNames.map(name =>
-    skillsData.find(skill => skill.name === name)
-  ).filter(skill => skill !== undefined);
-
-  // Icon mapping for skills
-  const skillIcons = {
-    'Python': 'fab fa-python',
-    'Java': 'fab fa-java',
-    'C': 'fas fa-code',
-    'SQL': 'fas fa-database',
-    'PyTorch': 'fas fa-brain',
-    'Scikit-learn': 'fas fa-chart-line',
-    'Django': 'fab fa-python',
-    'Git': 'fab fa-git-alt',
-    'JavaScript': 'fab fa-js',
-    'HTML/CSS': 'fab fa-html5',
-    'BASH': 'fas fa-terminal',
-    'Linux': 'fab fa-linux',
-    'Docker': 'fab fa-docker',
-    'React': 'fab fa-react'
-  };
-
-  featuredSkills.forEach(skill => {
+  featuredSkillsContainer.innerHTML = '';
+  skillsToDisplay.forEach(skill => {
     const skillCol = document.createElement('div');
     skillCol.className = 'col-6 col-md-3 mb-4';
 
     const skillItem = document.createElement('div');
     skillItem.className = 'skill-item p-3';
 
-    const iconClass = skillIcons[skill.name] || 'fas fa-code';
     skillItem.innerHTML = `
-      <i class="${iconClass} fa-2x mb-3 text-primary"></i>
+      <i class="${skill.icon} fa-2x mb-3 text-primary"></i>
       <h5>${skill.name}</h5>
     `;
 
@@ -217,7 +202,9 @@ function initFeaturedSkills() {
     featuredSkillsContainer.appendChild(skillCol);
   });
 
-  feather.replace();
+  if (typeof feather !== 'undefined') {
+    feather.replace();
+  }
 }
 
 // Start the loading process
