@@ -18,18 +18,6 @@ Through this portfolio, I aim to:
 - **Projects section**, with descriptions, technologies used, and links to repositories or live demos  
 - **Personal and professional information**, including contact details, education, and work experience
 
-## 🚀 Technologies Used
-
-The portfolio is built using modern technologies, including:
-
-- HTML5 / CSS3  
-- JavaScript
-
-## 🌐 Live Demo
-
-You can view the portfolio online at the following link:  
-👉 [https://riccardomasetti.github.io/rmasetti-portfolio/](https://riccardomasetti.github.io/rmasetti-portfolio/)
-
 ## 📬 Contact
 
 If you'd like to get in touch with me:
@@ -37,7 +25,3 @@ If you'd like to get in touch with me:
 - Email: [riccardo.masetti@outlook.com](mailto:riccardo.masetti@outlook.com)  
 - LinkedIn: [https://www.linkedin.com/in/r-masetti](https://www.linkedin.com/in/r-masetti)
 
----
-
-Thank you for visiting this repository!  
-Any feedback is welcome.
