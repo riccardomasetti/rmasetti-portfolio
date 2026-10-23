@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyOwn | Riccardo Masetti</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script data-goatcounter="https://rmasetti.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+
+<body>
+  <!-- Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Project Header -->
+  <header class="project-detail-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <a href="../projects.html" class="btn btn-outline-secondary mb-4">
+            <i data-feather="arrow-left" style="width: 18px; height: 18px;"></i> Back to Projects
+          </a>
+          <div class="text-center">
+            <h1 class="display-4 fw-bold mb-3">MyOwn</h1>
+            <div class="mt-3">
+              <span class="tech-badge">Next.js</span>
+              <span class="tech-badge">Supabase</span>
+              <span class="tech-badge">Enable Banking</span>
+              <span class="tech-badge">Recharts</span>
+              <span class="tech-badge">Groq AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Content -->
+  <section class="project-detail-content py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+
+          <!-- Overview -->
+          <div class="project-detail-section mb-5">
+            <h2>The Problem</h2>
+            <p>
+              During the past years I tried several personal finance solutions, trying to keep trace of my spendings and my persona ownings, but none of them matched my taste or my workflow 100%. 
+              They either required too much manual work (like inserting manually every single expense done) or forced me into their rigid budgeting systems or visualization styles. 
+              The idea of building something that was tailored to my needs has been in my mind for a while, but I never really seeked how to do so, i just had some fancy solution
+              (like find a way to intercept notification from my bank and parse them to extract the information I needed, pretty stupid I know :P).
+            </p>  
+            <p>
+              But finally one day i found the time to really think about it, and i discovered that the solution was much easier than what I thought, since there is a service
+              called <strong>Enable Banking</strong> that allows to connect to my bank account and retrieve all the transactions in a structured way, so I can just focus on building the application.
+
+              Before showing the result of my work, I want to say a couple of things:
+              <ul>
+                <li><strong>This project remains a personal project.</strong> Even if it has been built in a very precise and methodical way, 
+                  it is not intended for public use or distribution, and as such, it doesn't contain a lot of features that would be expected in a commercial product 
+                  (such as profile creation, etc). </li>
+                <li>Still, I am really proud of the work I've done on this project in particular because differently from many other projects, that i did
+                  just for fun, or because I wanted to learn a new technology or just because I was tired, this project actually tackled a real problem
+                  that I experience every day. And so the application become a real and powerful tool that I really use every day
+                </li>
+                
+              </ul>
+            </p>
+          </div>
+
+          <!-- Walkthrough -->
+          <div class="project-detail-section mb-5">
+            <h2>The Dashboard & Workflow</h2>
+            <p>
+              First of all, let me show you the main features of the application, then I'll keep explaining the technical details of how I built it.
+              The core of the application is the dashboard. I wanted an immediate, high-level overview the moment I open the app: total balance, monthly income, and expenses at a glance.
+
+              Moreover, I decided to keep separate digital and cash transaction, so that everytime I can see how much money I have in my bank account and how much cash I have in my wallet, and so that I can keep track of my cash expenses as well.
+            </p>
+            <img src="../media/projects/myown/dashboard.png" alt="Main Dashboard" class="img-fluid rounded shadow-md border w-100 mb-3">
+            <p>
+              I integrated <strong>Enable Banking</strong> (Open Banking PSD2) to directly connect my bank account. Every night at 5:00 AM, an automatic trigger syncs my latest transactions to a Supabase database. No more manual exports!
+              (Of course, I can also trigger a manual sync at any time if I want to see the latest transactions immediately.)
+            </p>
+
+            <h3 class="mt-5">How Categorization Works</h3>
+            <p>
+              To understand where my money goes, I combine deterministic rules with AI. Merchant names and transaction
+              descriptions are first normalized with regular expressions, removing differences in case, accents, and
+              punctuation. The app then checks saved merchant rules, custom keywords, and common phrases, such as
+              recurring supermarket names or salary descriptions.
+            </p>
+            <p>
+              Only transactions that remain unmatched are sent to <strong>Groq</strong>, in batches rather than one
+              API call per payment. I can also correct a category and save that choice as a merchant rule for future
+              transactions. Familiar payments therefore need no model call, keeping external requests limited to the
+              cases where AI is useful.
+            </p>
+            <div class="row g-3 mb-4">
+              <div class="col-md-6">
+                <img src="../media/projects/myown/categories.png" alt="Categories View" class="img-fluid rounded shadow-sm border w-100">
+              </div>
+              <div class="col-md-6">
+                <img src="../media/projects/myown/categories2.png" alt="Categories Detail" class="img-fluid rounded shadow-sm border w-100">
+              </div>
+            </div>
+            <p class="text-center text-muted small">The categorization views let me easily drill down into specific spending areas.</p>
+
+            <h4 class="mt-4">Sum Mode</h4>
+            <p>
+              I can also activate <strong>Sum mode</strong> and select several categories to immediately see their
+              combined spending. This makes it easy to check how much different spending areas add up to, without
+              having to calculate the total myself.
+            </p>
+            <div class="text-center mb-4">
+              <img src="../media/projects/myown/categories3.png" alt="Expenses by category with Sum mode enabled and multiple categories selected" class="img-fluid rounded shadow-sm border w-100" style="max-width: 590px;">
+            </div>
+          </div>
+
+          <!-- Why Graphs? -->
+          <div class="project-detail-section mb-5">
+            <h2>Why I Wanted Graphs</h2>
+            <p>
+              Reading a list of numbers doesn't trigger the same immediate realization as seeing a visual trend. I specifically designed the app around powerful charts (using Recharts) to track my <strong>daily spending</strong>. 
+            </p>
+            <p>
+              Seeing a spike on a bar chart instantly tells me if I went over budget during a weekend trip or if my daily expenses are creeping up. It turns raw data into actionable behavior changes.
+            </p>
+            <div class="row g-3 mb-4">
+              <div class="col-md-6">
+                <img src="../media/projects/myown/dailyspending.png" alt="Daily Spending Graph" class="img-fluid rounded shadow-sm border w-100">
+              </div>
+              <div class="col-md-6">
+                <img src="../media/projects/myown/dailyspending2.png" alt="Daily Spending Details" class="img-fluid rounded shadow-sm border w-100">
+              </div>
+            </div>
+          </div>
+
+          <div class="project-detail-section mb-5">
+            <h3>Monthly Cash Flow and Balance</h3>
+            <p>
+              The <strong>Income vs expenses</strong> chart compares money coming in and going out each month,
+              making it easy to see which months I spent more than I earned. The <strong>Balance trend</strong> chart
+              reconstructs how my total balance changed over the same period, using the latest known balance and
+              recorded transactions. Together, they show both monthly cash flow and its longer-term effect on the
+              funds I have available.
+            </p>
+            <div class="row g-3 mb-4">
+              <!-- Crop the original screenshot to each chart; stack them on smaller screens. -->
+              <div class="col-md-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="840" height="432" viewBox="286 84 840 432" role="img" aria-labelledby="myown-cash-flow-title" class="img-fluid rounded shadow-sm border w-100" style="overflow: hidden;">
+                  <title id="myown-cash-flow-title">Monthly income versus expenses</title>
+                  <image href="../media/projects/myown/dashboard2.png" width="2000" height="1041" />
+                </svg>
+              </div>
+              <div class="col-md-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="840" height="432" viewBox="1134 84 840 432" role="img" aria-labelledby="myown-balance-trend-title" class="img-fluid rounded shadow-sm border w-100" style="overflow: hidden;">
+                  <title id="myown-balance-trend-title">Monthly balance trend reconstructed from balances and transactions</title>
+                  <image href="../media/projects/myown/dashboard2.png" width="2000" height="1041" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-detail-section mb-5">
+            <h3>Manual Transactions</h3>
+            <p>Cash expenses and other transactions that do not come from the bank can be added manually. They appear alongside imported transactions in the category and reporting views, keeping digital and cash activity together in the dashboard.</p>
+            <div class="text-center">
+              <img src="../media/projects/myown/addtransaction.png" alt="Add Transaction Modal" class="img-fluid rounded shadow-sm border" style="max-height: 400px; width: auto;">
+            </div>
+          </div>
+
+          <div class="project-detail-section mb-5">
+            <h2>Technical Design and Security</h2>
+            <p>
+              MyOwn is built with <strong>Next.js and TypeScript</strong>, with <strong>Supabase</strong> handling
+              PostgreSQL storage and authentication, <strong>Enable Banking</strong> supplying transaction data,
+              and <strong>Recharts</strong> powering the visualizations. Banking synchronization runs on the server:
+              it normalizes incoming records, prevents duplicate imports, and applies the categorization pipeline
+              before saving them.
+            </p>
+            <p>
+              Even though I host and use the app myself, it handles real banking data, so security was part of the
+              design from the start. Access is restricted to my account and requires <strong>two-factor authentication</strong>.
+              Row-level security protects financial records at the database layer, input is validated on the server,
+              and banking credentials and privileged API keys stay out of the browser. The scheduled synchronization
+              endpoint is also protected by a secret.
+            </p>
+          </div>
+
+          <!-- Conclusion / Status Section -->
+          <div class="project-detail-section mb-5">
+            <div class="alert alert-info border-0 shadow-sm d-flex align-items-center">
+              <i data-feather="lock" class="me-3 text-primary" style="flex-shrink: 0; width: 24px; height: 24px;"></i>
+              <div>
+                <strong>Private Application:</strong> Because this app handles my real, live banking data, the repository and the live instance are completely private. It's built solely to solve my own problem.
+              </div>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="project-actions">
+            <a href="../projects.html" class="btn btn-primary">
+              <i data-feather="arrow-left" style="width: 18px; height: 18px;"></i> Back to All Projects
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+  <script src="../js/project-loader.js"></script>
+  <script>
+    // Initialize feather icons
+    feather.replace();
+  </script>
+</body>
+
+</html>

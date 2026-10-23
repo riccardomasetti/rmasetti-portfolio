@@ -18,35 +18,36 @@ async function loadSection(elementId, filePath) {
 
 // Function to initialize logic after components are loaded
 async function initSite() {
-  // 1. Load all sections
-  await loadSection('nav-placeholder', 'sections/navbar.html');
-  await loadSection('home-placeholder', 'sections/home.html');
-  await loadSection('about-placeholder', 'sections/about.html');
-  await loadSection('experience-placeholder', 'sections/experience.html');
-  await loadSection('education-placeholder', 'sections/education.html');
-  await loadSection('projects-placeholder', 'sections/projects_featured.html');
-  await loadSection('contacts-placeholder', 'sections/contacts.html');
-  await loadSection('footer-placeholder', 'sections/footer.html');
-
-  // 2. Initialize Feather Icons
-  feather.replace();
-
-  // 3. Initialize Home Projects (featured list)
-  initFeaturedProjects();
-
-  // 4. Initialize Experiences
-  initExperiences();
-
-  // 5. Initialize Featured Skills
-  initFeaturedSkills();
-
-  // 6. Initialize Navbar Mobile Toggle Logic
+  // The navbar is already in the HTML, so it can work while sections load.
   initNavbarLogic();
 
-  // 7. Initialize Contact Form
+  // 1. Load independent sections together rather than waiting for each in turn.
+  await Promise.all([
+    loadSection('home-placeholder', 'sections/home.html'),
+    loadSection('about-placeholder', 'sections/about.html'),
+    loadSection('experience-placeholder', 'sections/experience.html'),
+    loadSection('education-placeholder', 'sections/education.html'),
+    loadSection('projects-placeholder', 'sections/projects_featured.html').then(initFeaturedProjects),
+    loadSection('publications-placeholder', 'sections/publications.html').then(initPublications),
+    loadSection('contacts-placeholder', 'sections/contacts.html'),
+    loadSection('footer-placeholder', 'sections/footer.html')
+  ]);
+
+  // 2. Initialize Feather Icons
+  if (typeof feather !== 'undefined') {
+    feather.replace();
+  }
+
+  // 3. Initialize Experiences
+  initExperiences();
+
+  // 4. Initialize Featured Skills
+  initFeaturedSkills();
+
+  // 5. Initialize Contact Form
   initContactForm();
 
-  // 8. Handle hash navigation after sections are loaded
+  // 6. Handle hash navigation after sections are loaded
   handleHashNavigation();
 }
 
@@ -127,11 +128,30 @@ function initContactForm() {
   }
 }
 
+// Embed the featured card icons so their first render does not need Feather.
+function projectPreviewIcon(name, size) {
+  const shapes = {
+    'pie-chart': '<path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10Z"/>',
+    'layers': '<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>',
+    'github': '<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 19 4.77 5.07 5.07 0 0 0 18.91 1S17.73.65 15 2.48a13.38 13.38 0 0 0-7 0C5.27.65 4.09 1 4.09 1A5.07 5.07 0 0 0 4 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 8 18.13V22"/>',
+    'arrow-right': '<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>'
+  };
+
+  // Keep supporting other projects if the featured selection changes.
+  if (!shapes[name]) {
+    return `<i data-feather="${name}" style="width: ${size}px; height: ${size}px;"></i>`;
+  }
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-${name}" aria-hidden="true" focusable="false">${shapes[name]}</svg>`;
+}
+
 function initFeaturedProjects() {
   const featuredProjectsContainer = document.getElementById('featured-projects-container');
   if (!featuredProjectsContainer) return;
 
-  const featuredProjects = projectsData.filter(project => project.featured);
+  // The homepage preview shows only the first two featured projects.
+  const featuredProjects = projectsData.filter(project => project.featured).slice(0, 2);
+  featuredProjectsContainer.replaceChildren();
   featuredProjects.forEach(project => {
     const projectCard = document.createElement('div');
     projectCard.className = 'col-lg-6 mb-4';
@@ -142,7 +162,7 @@ function initFeaturedProjects() {
     if (project.githubLink && !project.underDevelopment) {
       githubButton = `
               <a href="${project.githubLink}" target="_blank" class="btn btn-outline-dark me-2 position-relative" style="z-index: 2;" onclick="event.stopPropagation();">
-                  <i data-feather="github" style="width: 18px; height: 18px;"></i> GitHub
+                  ${projectPreviewIcon('github', 18)} GitHub
               </a>`;
     }
 
@@ -151,7 +171,7 @@ function initFeaturedProjects() {
               <div class="card-body p-4">
                   <div class="d-flex align-items-center mb-3">
                       <span class="bg-primary text-white p-2 me-3 rounded">
-                          <i data-feather="${project.icon}" style="width: 24px; height: 24px;"></i>
+                          ${projectPreviewIcon(project.icon, 24)}
                       </span>
                       <h3 class="fw-bold m-0">${project.title}</h3>
                   </div>
@@ -160,14 +180,16 @@ function initFeaturedProjects() {
                   <div class="d-flex mt-4 pt-2">
                       ${githubButton}
                       <span class="btn btn-primary">
-                          Learn More <i data-feather="arrow-right" style="width: 18px; height: 18px;"></i>
+                          Learn More ${projectPreviewIcon('arrow-right', 18)}
                       </span>
                   </div>
               </div>
           </div>`;
     featuredProjectsContainer.appendChild(projectCard);
   });
-  feather.replace(); // Refresh icons for the newly added projects
+  if (typeof feather !== 'undefined') {
+    feather.replace();
+  }
 }
 
 function initFeaturedSkills() {

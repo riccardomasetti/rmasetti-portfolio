@@ -1,4 +1,16 @@
+// Hidden projects stay in this file so they can be restored later.
 const projectsData = [
+  {
+    title: "MyOwn",
+    category: "web",
+    icon: "pie-chart",
+    technologies: "Next.js • Supabase • Enable Banking • Recharts • AI",
+    description: "This app was born out of pure frustration. Existing banking apps are terrible, and no personal finance solution on the market perfectly matched my needs. I wanted a private, fully automated dashboard with powerful graphs to track my spending daily. So, I built my own.",
+    detailPage: "projects/myown.html",
+    githubLink: "",
+    featured: true,
+    private: true
+  },
   {
     title: "Run Dashboard",
     category: "web",
@@ -19,6 +31,7 @@ const projectsData = [
     detailPage: "projects/eva.html",
     githubLink: "",
     featured: false,
+    hidden: true,
     underDevelopment: true
   },
   {
@@ -26,7 +39,7 @@ const projectsData = [
     category: "Machine & Deep Learning",
     icon: "layers",
     technologies: "Machine Learning • Python • Snakemake • Hydra",
-    description: "Research project conducted at NECSTLab, Politecnico di Milano, as part of the Leonardo project in collaboration with Samuele Tondelly and under the supervision of Leonardo De Grandis.\n\nCurrently contributing to a pangenomic variant classification project using Graph Machine Learning techniques.\n\nThe research activities focus on applying advanced AI and data-driven methods to computational biology and genomics, with the goal of improving variant classification accuracy in genomic datasets. the project is still ongoing.",
+    description: "Research project conducted at NECSTLab, Politecnico di Milano, as part of the Leonardo project in collaboration with Samuele Tondelli and under the supervision of Leonardo De Grandis.\n\nCurrently contributing to a pangenomic variant classification project using Graph Machine Learning techniques.\n\nThe research activities focus on applying advanced AI and data-driven methods to computational biology and genomics, with the goal of improving variant classification accuracy in genomic datasets. the project is still ongoing.",
     detailsLink: "",
     detailPage: "projects/variant-classification.html",
     githubLink: "https://github.com/necst/variant-classification-ml",
@@ -61,7 +74,7 @@ const projectsData = [
     description: "A web application built with Django for managing university missions, originally developed by the AImage Lab at Unimore. As part of my bachelor's thesis, I contributed by adding new features and optimizing existing workflows to improve the overall user experience.",
     detailPage: "projects/missioni.html",
     githubLink: "https://github.com/prittt/missioni-unimore",
-    featured: true
+    featured: false
   },
   {
     title: "ODC Challenges",
@@ -136,4 +149,4 @@ const projectsData = [
     featured: false
   },
 
-];
+].filter(project => !project.hidden);

@@ -1,4 +1,4 @@
-#about, #education, #projects {
+#about, #education, #projects, #publications {
     background-image: linear-gradient(rgb(235, 245, 251), rgb(245, 245, 245));
   }
   
@@ -447,6 +447,93 @@
   .timeline-marker-current::after {
     animation: none;
   }
+}
+
+/* Publications */
+.publications-section .underline {
+  width: 80px;
+  height: 4px;
+  margin-top: 15px;
+  background: #0d6efd;
+}
+
+.publications-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #dee2e6;
+}
+
+.publication-row {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.publication-year {
+  line-height: 1.5;
+}
+
+.publication-details h2 {
+  line-height: 1.5;
+}
+
+.publication-details p {
+  line-height: 1.6;
+}
+
+.publication-details abbr {
+  text-decoration: none;
+  cursor: help;
+}
+
+.publication-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0;
+  color: #0d6efd;
+  white-space: nowrap;
+  text-underline-offset: 3px;
+}
+
+.publication-link:focus-visible {
+  outline: 2px solid #0d6efd;
+  outline-offset: 4px;
+}
+
+@media (max-width: 767.98px) {
+  .publication-row {
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 0.5rem 1rem;
+  }
+
+  .publication-link {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .publications-section #publications-heading {
+    font-size: clamp(1.8rem, 8.5vw, 3rem);
+  }
+}
+
+/* Projects overview */
+.projects-intro {
+  max-width: 720px;
+  margin-top: 1.75rem;
+}
+
+.projects-intro-summary {
+  margin-bottom: 0;
+  color: #495057;
+  font-size: 1.15rem;
+  line-height: 1.7;
 }
 
 /* Project Detail Page Styles */

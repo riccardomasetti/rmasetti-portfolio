@@ -27,7 +27,7 @@ const experiencesData = [
     icon: "search",
     logo: "media/necst-logo.png",
     logoAlt: "NECSTLab logo",
-    description: "Previous work focused on exploring machine learning techniques for pangenomic variant classification, leading to a research paper published at IEEE EMBC 2026.\n\nThen, the project has evolved in a new direction. I am now working on graph machine learning, investigating how the JEPA framework can be applied to self-supervised learning on graphs to generate high-quality embeddings."
+    description: "Previous work focused on exploring machine learning techniques for pangenomic variant classification, leading to a research paper accepted at IEEE EMBC 2026 (not yet published).\n\nThen, the project has evolved in a new direction. I am now working on graph machine learning, investigating how the JEPA framework can be applied to self-supervised learning on graphs to generate high-quality embeddings."
   },
   {
     company: "eva",
@@ -37,7 +37,7 @@ const experiencesData = [
     period: "January 2025 — January 2026",
     icon: "activity",
     logo: "media/eva-logo.png",
-    description: "Worked on developing a web platform to help STEM students prepare for university exams, including an AI-powered workflow for generating tailored practice tests and quizzes from their own materials. Unfortunately, due to operating costs and intense market competition, the project was discontinued."
+    description: "I tried, together with my colleagues, to build a web platform to help STEM students prepare for university exams, including an AI-powered workflow for generating tailored practice tests and quizzes from their own materials. Unfortunately, due to operating costs and intense market competition, the project was discontinued, but it was a great learning experience that also lead to a published research paper on AI-assisted educational tools."
   },
   {
     company: "AImage Lab · University of Modena and Reggio Emilia",
@@ -46,7 +46,7 @@ const experiencesData = [
     startDate: "2024-02-01",
     period: "February 2024 — September 2024",
     icon: "code",
-    description: "Joined the AImage Lab research group and contributed to Missioni, a Django web application for managing university missions, as part of my bachelor's thesis work."
+    description: "Contributed to Missioni, a Django web application for managing university missions, as part of my bachelor's thesis work."
   },
   {
     company: "MoRe Racing Combustion",

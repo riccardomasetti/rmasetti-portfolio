@@ -5,6 +5,7 @@ async function loadProjectComponents() {
     const navbarResponse = await fetch('../sections/navbar-projects.html');
     const navbarContent = await navbarResponse.text();
     document.getElementById('navbar-placeholder').innerHTML = navbarContent;
+    initNavbarLogic();
     
     // Load footer
     const footerResponse = await fetch('../sections/footer.html');
@@ -15,9 +16,7 @@ async function loadProjectComponents() {
     if (typeof feather !== 'undefined') {
       feather.replace();
     }
-    
-    // Initialize navbar mobile toggle logic
-    initNavbarLogic();
+
   } catch (error) {
     console.error('Error loading project components:', error);
   }
@@ -42,4 +41,3 @@ function initNavbarLogic() {
 
 // Load components when DOM is ready
 document.addEventListener('DOMContentLoaded', loadProjectComponents);
-
