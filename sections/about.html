@@ -8,9 +8,15 @@
       </div>
       
       <div class="row align-items-center mb-5">
-        <div class="col-md-4 mb-4 mb-md-0 text-center">
-          <img src="media/aboutme.jpg" alt="Riccardo Masetti" class="img-fluid shadow rounded mx-auto"
-              style="border-radius: 20px; max-width: 100%; display: block;">
+        <div class="col-md-4 mb-4 mb-md-0 text-center align-self-start">
+          <div id="aboutPhotoCarousel" class="carousel slide about-photos mx-auto"
+            role="region" aria-roledescription="carousel" aria-label="Photos of Riccardo Masetti">
+            <div id="about-photo-slides" class="carousel-inner"></div>
+            <div class="about-photo-controls">
+              <div id="about-photo-indicators" class="carousel-indicators" role="group" aria-label="Choose a photo"></div>
+            </div>
+            <p id="about-photo-status" class="visually-hidden" role="status"></p>
+          </div>
         </div>
         <div class="col-md-8">
           <div class="card border-0 shadow-sm mb-4">

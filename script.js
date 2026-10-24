@@ -33,6 +33,8 @@ async function initSite() {
     loadSection('footer-placeholder', 'sections/footer.html')
   ]);
   updateNavbarSection();
+  initAboutPhotos();
+  initPointerGlow();
 
   // 2. Initialize Feather Icons
   if (typeof feather !== 'undefined') {
