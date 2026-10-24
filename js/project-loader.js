@@ -26,15 +26,20 @@ function initNavbarLogic() {
   const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
   const navbarCollapse = document.querySelector('#navbarNav');
   if (navLinks && navbarCollapse) {
+    const closeMenu = () => {
+      if (navbarCollapse.classList.contains('show')) {
+        window.bootstrap?.Collapse.getInstance(navbarCollapse)?.hide();
+      }
+    };
     navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if (navbarCollapse.classList.contains('show')) {
-          const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-          if (bsCollapse) {
-            bsCollapse.hide();
-          }
-        }
-      });
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.querySelector('.portfolio-navbar')?.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && navbarCollapse.classList.contains('show')) {
+        closeMenu();
+        document.querySelector('.navbar-toggler')?.focus();
+      }
     });
   }
 }

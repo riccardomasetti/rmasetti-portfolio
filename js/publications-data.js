@@ -3,9 +3,9 @@ const publicationsData = [
   {
     title: "eva: Continuous Learning for STEM Students",
     authors: [
-      { name: "Matteo Minotti" },
-      { name: "Riccardo Masetti", highlight: true },
-      { name: "Pietro Carrucciu" },
+      { name: "Matteo Minotti", equalContribution: true },
+      { name: "Riccardo Masetti", highlight: true, equalContribution: true },
+      { name: "Pietro Carrucciu", equalContribution: true },
       { name: "Laura Ginestretti" },
       { name: "Marco D. Santambrogio" }
     ],

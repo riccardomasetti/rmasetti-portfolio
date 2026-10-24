@@ -19,7 +19,7 @@ async function loadSection(elementId, filePath) {
 // Function to initialize logic after components are loaded
 async function initSite() {
   // The navbar is already in the HTML, so it can work while sections load.
-  initNavbarLogic();
+  const updateNavbarSection = initNavbarLogic();
 
   // 1. Load independent sections together rather than waiting for each in turn.
   await Promise.all([
@@ -32,6 +32,7 @@ async function initSite() {
     loadSection('contacts-placeholder', 'sections/contacts.html'),
     loadSection('footer-placeholder', 'sections/footer.html')
   ]);
+  updateNavbarSection();
 
   // 2. Initialize Feather Icons
   if (typeof feather !== 'undefined') {
@@ -58,9 +59,13 @@ function scrollToHash(hash) {
   const targetElement = document.querySelector(hash);
   if (targetElement) {
     // Account for fixed navbar height (CSS already has scroll-padding-top, but we ensure it works)
-    const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+    const navbar = document.querySelector('.portfolio-navbar');
+    // Use the closed header height while the mobile menu is collapsing.
+    const navbarHeight = navbar
+      ? parseFloat(getComputedStyle(navbar).minHeight) || navbar.offsetHeight
+      : 0;
     const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-    const offsetPosition = elementPosition - navbarHeight - 20; // 20px extra padding
+    const offsetPosition = elementPosition - navbarHeight;
 
     window.scrollTo({
       top: offsetPosition,
@@ -97,13 +102,49 @@ function handleHashNavigation() {
 function initNavbarLogic() {
   const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
   const navbarCollapse = document.querySelector('#navbarNav');
+  const closeMenu = () => {
+    if (navbarCollapse?.classList.contains('show')) {
+      window.bootstrap?.Collapse.getInstance(navbarCollapse)?.hide();
+    }
+  };
   navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-        bootstrap.Collapse.getInstance(navbarCollapse).hide();
-      }
-    });
+    link.addEventListener('click', closeMenu);
   });
+
+  document.querySelector('.portfolio-navbar')?.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && navbarCollapse?.classList.contains('show')) {
+      closeMenu();
+      document.querySelector('.navbar-toggler')?.focus();
+    }
+  });
+
+  const updateActiveSection = () => {
+    const marker = Math.max(100, window.innerHeight * 0.25);
+    let activeLink = null;
+    navLinks.forEach(link => {
+      const section = document.getElementById(link.hash.slice(1));
+      if (section && section.getBoundingClientRect().top <= marker) activeLink = link;
+    });
+    navLinks.forEach(link => {
+      const active = link === activeLink;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  };
+
+  let framePending = false;
+  const scheduleUpdate = () => {
+    if (framePending) return;
+    framePending = true;
+    requestAnimationFrame(() => {
+      updateActiveSection();
+      framePending = false;
+    });
+  };
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('resize', scheduleUpdate);
+  return updateActiveSection;
 }
 
 function initContactForm() {
