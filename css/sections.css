@@ -1,5 +1,6 @@
 /* Shared homepage atmosphere, with a quiet boundary at each section. */
 .portfolio-section {
+  --section-space: clamp(3rem, 6svh, 5rem);
   --glow-left: 8%;
   --glow-right: 92%;
   position: relative;
@@ -12,7 +13,14 @@
     linear-gradient(180deg, #eef6fc 0%, #f3f7fb 50%, #f8fafc 100%);
 }
 
+/* Each navigation destination fills the area below the fixed header.
+   Content can grow naturally on smaller screens and in longer sections. */
 .portfolio-section:not(#home) {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - var(--nav-height, 76px));
+  min-height: calc(100svh - var(--nav-height, 76px));
+  padding-block: var(--section-space);
   box-shadow: inset 0 1px 0 rgba(91, 127, 169, 0.14);
 }
 
@@ -25,6 +33,55 @@
 .portfolio-section > .container {
   position: relative;
   z-index: 1;
+}
+
+/* Contact and the footer share the final screen. */
+.portfolio-ending {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--nav-height, 76px));
+  min-height: calc(100svh - var(--nav-height, 76px));
+}
+
+.portfolio-ending #contacts-placeholder {
+  display: flex;
+  flex: 1;
+}
+
+.portfolio-ending #contacts {
+  flex: 1;
+  min-height: 0;
+  padding-block: clamp(1.5rem, 4svh, 3rem);
+}
+
+.portfolio-ending #footer-placeholder {
+  flex-shrink: 0;
+}
+
+@media (min-width: 992px) and (max-height: 850px) {
+  .portfolio-ending #contacts {
+    padding-block: 1.25rem;
+  }
+
+  #contactForm {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1rem;
+  }
+
+  #contactForm > :nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  #contactForm > button {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  #contactForm textarea {
+    height: 6rem;
+    min-height: 6rem;
+  }
 }
 
 /* The ASCII cloud belongs to Home; scrolling never repositions its canvas. */
@@ -183,10 +240,6 @@
   }
 
 /* Professional experience timeline */
-.experience-section {
-  min-height: 100vh;
-  padding: 3rem 0;
-}
 
 .experience-eyebrow {
   color: #5f6f82;
@@ -443,10 +496,6 @@
 }
 
 @media (max-width: 767.98px) {
-  .experience-section {
-    padding: 1.5rem 0;
-  }
-
   .experience-section #experience-heading {
     font-size: clamp(2.15rem, 11vw, 3rem);
     line-height: 1.12;

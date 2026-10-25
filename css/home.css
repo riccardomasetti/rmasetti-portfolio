@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   min-height: 100svh;
-  padding: calc(var(--nav-height) + 4rem) 0 5rem;
+  padding: calc(var(--nav-height) + var(--section-space)) 0 var(--section-space);
 }
 
 .home-introduction {
@@ -37,10 +37,6 @@
 }
 
 @media (max-width: 575.98px) {
-  #home {
-    padding: calc(var(--nav-height) + 3rem) 0 4rem;
-  }
-
   #home h1 {
     margin-bottom: 1.5rem;
   }

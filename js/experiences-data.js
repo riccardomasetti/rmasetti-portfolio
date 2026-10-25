@@ -40,17 +40,17 @@ const experiencesData = [
     description: "I tried, together with my colleagues, to build a web platform to help STEM students prepare for university exams, including an AI-powered workflow for generating tailored practice tests and quizzes from their own materials. Unfortunately, due to operating costs and intense market competition, the project was discontinued, but it was a great learning experience that also lead to a published research paper on AI-assisted educational tools."
   },
   {
-    company: "AImage Lab · University of Modena and Reggio Emilia",
+    company: "University of Modena and Reggio Emilia",
     role: "Software Engineer",
     location: "Modena, Italy",
     startDate: "2024-02-01",
     period: "February 2024 — September 2024",
     icon: "code",
-    description: "Contributed to Missioni, a Django web application for managing university missions, as part of my bachelor's thesis work."
+    description: "For my master's thesis, I worked on Missioni Unimore, a Django web application used to manage university business trips and expense reimbursements."
   },
   {
     company: "MoRe Racing Combustion",
-    role: "Software Engineer Intern",
+    role: "Software Engineer",
     location: "Modena, Italy",
     startDate: "2023-03-01",
     period: "March 2023 — October 2023",
