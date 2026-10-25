@@ -47,7 +47,7 @@ const experiencesData = [
     startDate: "2024-02-01",
     period: "February 2024 — September 2024",
     icon: "code",
-    description: "For my master's thesis, I worked on Missioni Unimore, a Django web application used to manage university business trips and expense reimbursements."
+    description: "For my bachelor's thesis, I worked on Missioni Unimore, a Django web application used to manage university business trips and expense reimbursements."
   },
   {
     company: "MoRe Racing Combustion",

@@ -1,6 +1,17 @@
 // Hidden projects stay in this file so they can be restored later.
 const projectsData = [
   {
+    title: "variant classification project",
+    category: "Machine & Deep Learning",
+    icon: "layers",
+    technologies: "Machine Learning • Python • Snakemake • Hydra",
+    description: "Research project conducted at NECSTLab, Politecnico di Milano, as part of the Leonardo project in collaboration with Samuele Tondelli and under the supervision of Leonardo De Grandis.\n\nContributed to pangenomic variant classification using Machine Learning techniques.\n\nThe research activities focused on applying advanced AI and data-driven methods to computational biology and genomics, with the goal of benchmarking and improving variant classification accuracy in genomic datasets.",
+    detailsLink: "",
+    detailPage: "projects/variant-classification.html",
+    githubLink: "https://github.com/necst/variant-classification-ml",
+    featured: true
+  },
+  {
     title: "MyOwn",
     category: "web",
     icon: "pie-chart",
@@ -33,17 +44,6 @@ const projectsData = [
     featured: false,
     hidden: true,
     underDevelopment: true
-  },
-  {
-    title: "variant classification project",
-    category: "Machine & Deep Learning",
-    icon: "layers",
-    technologies: "Machine Learning • Python • Snakemake • Hydra",
-    description: "Research project conducted at NECSTLab, Politecnico di Milano, as part of the Leonardo project in collaboration with Samuele Tondelli and under the supervision of Leonardo De Grandis.\n\nContributed to pangenomic variant classification using Machine Learning techniques.\n\nThe research activities focused on applying advanced AI and data-driven methods to computational biology and genomics, with the goal of benchmarking and improving variant classification accuracy in genomic datasets.",
-    detailsLink: "",
-    detailPage: "projects/variant-classification.html",
-    githubLink: "https://github.com/necst/variant-classification-ml",
-    featured: true
   },
   {
     title: "UWB Multi-Person Localization",
