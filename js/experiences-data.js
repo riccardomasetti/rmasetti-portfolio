@@ -27,7 +27,8 @@ const experiencesData = [
     icon: "search",
     logo: "media/necst-logo.png",
     logoAlt: "NECSTLab logo",
-    description: "Previous work focused on exploring machine learning techniques for pangenomic variant classification, leading to a research paper accepted at IEEE EMBC 2026 (not yet published).\n\nThen, the project has evolved in a new direction. I am now working on graph machine learning, investigating how the JEPA framework can be applied to self-supervised learning on graphs to generate high-quality embeddings."
+    description: "Previous work focused on exploring machine learning techniques for pangenomic variant classification, leading to a research paper accepted at IEEE EMBC 2026.\n\n \
+    Then, the project has evolved in a new direction. I am now working on graph machine learning, investigating how the JEPA framework can be applied to self-supervised learning on graphs to generate high-quality embeddings."
   },
   {
     company: "eva",

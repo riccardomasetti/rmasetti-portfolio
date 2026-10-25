@@ -120,3 +120,28 @@
     transition: none;
   }
 }
+
+/* Shared footer links contain icons only, so whitespace never gets underlined. */
+.portfolio-footer .footer-social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.portfolio-footer .footer-social-links a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.portfolio-footer a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+@media (min-width: 768px) {
+  .portfolio-footer .footer-social-links {
+    justify-content: flex-start;
+  }
+}

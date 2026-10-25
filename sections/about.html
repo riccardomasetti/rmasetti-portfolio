@@ -2,12 +2,12 @@
     <div class="container">
       <div class="row">
         <div class="col-12 text-center mb-5">
-          <h1 class="display-4 fw-bold">About <span class="text-primary">Me</span></h1>
+          <h1 class="display-4 fw-bold section-title">About <span class="text-primary">Me</span></h1>
           <div class="underline mx-auto" style="width: 80px; height: 4px; background-color: #0d6efd; margin-top: 15px;"></div>
         </div>
       </div>
-      
-      <div class="row align-items-center mb-5">
+
+      <div class="row align-items-center about-profile">
         <div class="col-md-4 mb-4 mb-md-0 text-center align-self-start">
           <div id="aboutPhotoCarousel" class="carousel slide about-photos mx-auto"
             role="region" aria-roledescription="carousel" aria-label="Photos of Riccardo Masetti">
@@ -20,79 +20,50 @@
         </div>
         <div class="col-md-8">
           <div class="card border-0 shadow-sm mb-4">
-            <div class="card-body">
+            <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
                 <i data-feather="user" class="text-primary me-3"></i>
                 <h3 class="fw-bold mb-0">Who I Am</h3>
               </div>
-              <p class="lead">I'm curious by nature and learn best by doing. I like building things and taking on projects that push me beyond what I already know.
+              <p class="about-copy">I'm curious by nature and learn best by doing. I like building things and taking on projects that push me beyond what I already know.
                 I'm especially drawn to challenges where the problems aren't all clear from the start, and figuring them out is part of the work.
-                Turning an idea into something that actually works, learning and experimenting along the way, is what excites me most.</p>
+                Turning an idea into something that actually works, learning and experimenting along the way, is what excites me most.
+                (Hackathon vibes are the best!)</p>
             </div>
           </div>
           <div class="card border-0 shadow-sm mb-4">
-            <div class="card-body">
+            <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
                 <i data-feather="briefcase" class="text-primary me-3"></i>
                 <h3 class="fw-bold mb-0">Beyond the Code</h3>
               </div>
-              <p class="lead">When I’m not coding, I enjoy surrounding myself with creativity. Since 2022, 
-                I’ve been the guitarist for the band Jucar, where I get to channel ideas and emotions in a completely different way. 
-                Moreover, I’m extremely passionate about sports, and from 2018 to 2022 I was a competitive track athlete with La Fratellanza Modena 1874. 
+              <p class="about-copy">When I’m not coding, I enjoy surrounding myself with creativity. Since 2022,
+                I’ve been the guitarist for the band Jucar, where I get to channel ideas and emotions in a completely different way.
+                Moreover, I’m extremely passionate about sports, and from 2018 to 2022 I was a competitive track athlete with La Fratellanza Modena 1874.
                 Running in particular still plays a big role in my life—it helps me stay focused, clear-headed, and energized.</p>
             </div>
           </div>
-          
-          <div class="card border-0 shadow-sm">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-4">
-                <i data-feather="file-text" class="text-primary me-3"></i>
-                <h3 class="fw-bold mb-0">Resume</h3>
-              </div>
-              <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-2 gap-md-3">
-                <p class="lead mb-0">Want to know more about my experience?</p>
-                <div class="d-flex flex-wrap gap-2 ms-md-3">
-                  <a href="media/CV_Riccardo-Masetti-eng.pdf?v=10fe8ffbaa39" target="_blank" class="btn btn-primary" style="border-radius: 25px; padding: 8px 20px;">
-                    <i data-feather="file-text" class="me-2" style="width: 16px; height: 16px;"></i>
-                    English CV
-                  </a>
-                  <a href="media/CV_Riccardo-Masetti.pdf?v=5cb64219e3ba" target="_blank" class="btn btn-outline-primary" style="border-radius: 25px; padding: 8px 20px;">
-                    <i data-feather="file-text" class="me-2" style="width: 16px; height: 16px;"></i>
-                    CV Italiano
-                  </a>
-                </div>
-              </div>
+
+          <div class="about-actions" aria-label="Resume and skills">
+            <div class="about-cv-links">
+              <a href="media/CV_Riccardo-Masetti-eng.pdf?v=10fe8ffbaa39" download="CV_Riccardo-Masetti-eng.pdf" class="btn btn-outline-primary">
+                <i data-feather="download" aria-hidden="true"></i> English CV
+              </a>
+              <a href="media/CV_Riccardo-Masetti.pdf?v=5cb64219e3ba" download="CV_Riccardo-Masetti.pdf" class="btn btn-outline-primary">
+                <i data-feather="download" aria-hidden="true"></i> CV Italiano
+              </a>
             </div>
+            <a href="skills.html" class="btn btn-outline-primary about-skills-link">
+              View All Skills <i data-feather="arrow-right" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
       </div>
-      
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card border-0 shadow-sm">
-            <div class="card-body">
-              <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between mb-4">
-                <div class="d-flex align-items-center mb-3 mb-md-0">
-                  <i data-feather="code" class="text-primary me-3"></i>
-                  <h3 class="fw-bold mb-0">Technical Skills</h3>
-                </div>
-                <a href="skills.html" class="btn btn-outline-primary">
-                  <i data-feather="arrow-right" style="width: 18px; height: 18px;"></i> View All Skills
-                </a>
-              </div>
-              
-              <div class="row text-center" id="featured-skills-container">
-                <!-- Featured skills will be dynamically loaded here -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row mt-5">
-        <div class="col-md-6 mb-4 mb-md-0">
+
+      <div class="row g-4 mt-0 about-details">
+        <div class="col-md-6">
           <div class="card border-0 shadow-sm h-100">
-            <div class="card-body">
+            <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
                 <i data-feather="globe" class="text-primary me-3"></i>
                 <h3 class="fw-bold mb-0">Languages</h3>
@@ -112,26 +83,20 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6">
           <div class="card border-0 shadow-sm h-100">
-            <div class="card-body">
+            <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
                 <i data-feather="file-text" class="text-primary me-3"></i>
                 <h3 class="fw-bold mb-0">Certificates</h3>
               </div>
-              
-              <div class="mb-3">
-                <div class="d-flex align-items-center justify-content-between">
-                  <div class="d-flex align-items-center">
-                    <i data-feather="award" class="text-primary me-3" style="width: 20px; height: 20px;"></i>
-                    <p class="mb-0 fw-bold">IELTS Academic Certificate</p>
-                  </div>
-                  <a href="media/IELTS_Academic_Riccardo_Masetti.pdf" target="_blank" class="btn btn-primary">
-                    <i data-feather="file-text" style="width: 16px; height: 16px;"></i> View
-                  </a>
-                </div>
-              </div>
+
+              <a href="media/IELTS_Academic_Riccardo_Masetti.pdf" target="_blank" rel="noopener noreferrer"
+                class="about-certificate-link d-inline-flex align-items-center gap-3 fw-bold">
+                <i data-feather="award" class="text-primary flex-shrink-0" style="width: 20px; height: 20px;" aria-hidden="true"></i>
+                <span>IELTS Academic Certificate</span>
+              </a>
             </div>
           </div>
         </div>

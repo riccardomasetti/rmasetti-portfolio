@@ -4,42 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skills | Riccardo Masetti</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="style.css?v=20261024-6" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css?v=20261025-12" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <script data-goatcounter="https://rmasetti.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
-<body>
+<body data-page="skills">
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light portfolio-navbar fixed-top" aria-label="Main navigation">
-    <div class="container">
-
-      <div class="navbar-mobile-controls">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
-      </div>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="index.html#about" aria-current="location">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#education">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#publications">Publications</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#contacts">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <div id="navbar-placeholder"></div>
 
   <!-- Skills Header -->
-  <header class="py-5 bg-light" style="margin-top: 70px;">
+  <header class="py-5 bg-light" style="margin-top: var(--nav-height, 76px);">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -50,10 +28,10 @@
       </div>
       <div class="row">
         <div class="col-12 text-center">
-          <h1 class="display-4 fw-bold">My <span class="text-primary">Skills</span></h1>
+          <h1 class="display-4 fw-bold section-title">My <span class="text-primary">Skills</span></h1>
           <div class="underline mx-auto" style="width: 80px; height: 4px; background-color: #0d6efd; margin-top: 15px;"></div>
-          <p class="lead mt-4 text-muted mx-auto" style="max-width: 800px;">
-            Throughout my studies, research, and personal projects, I have had the opportunity to work with a wide range of tools and technologies. Below is an overview divided into my daily workflow tools, programming languages, other frameworks and tools used across projects, and my core soft skills.
+          <p class="section-intro mt-4 text-muted mx-auto" style="max-width: 800px;">
+            Through my studies, research, and personal projects, I've worked with a wide range of tools and technologies. Here's an overview of my everyday tools, programming languages, other technologies I've used, and soft skills.
           </p>
         </div>
       </div>
@@ -70,34 +48,15 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white py-4 mt-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-          <h5 class="mb-3">Riccardo Masetti</h5>
-          <div class="mb-3">
-            <a href="https://github.com/riccardomasetti" class="text-white me-3" target="_blank">
-              <i data-feather="github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/r-masetti/" class="text-white me-3" target="_blank">
-              <i data-feather="linkedin"></i>
-            </a>
-            <a href="https://x.com/GinMase" class="text-white me-3" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.835L0 1.154h7.594l5.243 6.932 6.064-6.933Zm-1.29 19.49h2.039L6.486 3.24H4.298l13.313 17.403Z"/></svg></a>
-            <a href="mailto:riccardo.masetti@outlook.com" class="text-white">
-              <i data-feather="mail"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <div id="footer-placeholder"></div>
 
   <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/skills-data.js"></script>
   <script src="js/skills-loader.js"></script>
   <script>
     feather.replace();
   </script>
+  <script src="js/site-chrome.js?v=20261025-8"></script>
 </body>
 </html>

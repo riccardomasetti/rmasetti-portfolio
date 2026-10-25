@@ -18,7 +18,8 @@ async function loadSection(elementId, filePath) {
 
 // Function to initialize logic after components are loaded
 async function initSite() {
-  // The navbar is already in the HTML, so it can work while sections load.
+  // Wait for the shared navigation before attaching homepage section tracking.
+  await window.siteChromeReady;
   const updateNavbarSection = initNavbarLogic();
 
   // 1. Load independent sections together rather than waiting for each in turn.
@@ -29,8 +30,7 @@ async function initSite() {
     loadSection('education-placeholder', 'sections/education.html'),
     loadSection('projects-placeholder', 'sections/projects_featured.html').then(initFeaturedProjects),
     loadSection('publications-placeholder', 'sections/publications.html').then(initPublications),
-    loadSection('contacts-placeholder', 'sections/contacts.html'),
-    loadSection('footer-placeholder', 'sections/footer.html')
+    loadSection('contacts-placeholder', 'sections/contacts.html')
   ]);
   updateNavbarSection();
   initAboutPhotos();
@@ -44,13 +44,10 @@ async function initSite() {
   // 3. Initialize Experiences
   initExperiences();
 
-  // 4. Initialize Featured Skills
-  initFeaturedSkills();
-
-  // 5. Initialize Contact Form
+  // 4. Initialize Contact Form
   initContactForm();
 
-  // 6. Handle hash navigation after sections are loaded
+  // 5. Handle hash navigation after sections are loaded
   handleHashNavigation();
 }
 
@@ -103,23 +100,6 @@ function handleHashNavigation() {
 
 function initNavbarLogic() {
   const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-  const navbarCollapse = document.querySelector('#navbarNav');
-  const closeMenu = () => {
-    if (navbarCollapse?.classList.contains('show')) {
-      window.bootstrap?.Collapse.getInstance(navbarCollapse)?.hide();
-    }
-  };
-  navLinks.forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  document.querySelector('.portfolio-navbar')?.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && navbarCollapse?.classList.contains('show')) {
-      closeMenu();
-      document.querySelector('.navbar-toggler')?.focus();
-    }
-  });
-
   const updateActiveSection = () => {
     const marker = Math.max(100, window.innerHeight * 0.25);
     let activeLink = null;
@@ -230,43 +210,6 @@ function initFeaturedProjects() {
           </div>`;
     featuredProjectsContainer.appendChild(projectCard);
   });
-  if (typeof feather !== 'undefined') {
-    feather.replace();
-  }
-}
-
-function initFeaturedSkills() {
-  const featuredSkillsContainer = document.getElementById('featured-skills-container');
-  if (!featuredSkillsContainer) return;
-
-  const skillsToDisplay = (typeof featuredSkills !== 'undefined') ? featuredSkills : [
-    { name: 'Python', icon: 'fab fa-python' },
-    { name: 'PyTorch', icon: 'fas fa-brain' },
-    { name: 'Django', icon: 'fab fa-python' },
-    { name: 'C / C++', icon: 'fas fa-code' },
-    { name: 'Java', icon: 'fab fa-java' },
-    { name: 'Next.js & React', icon: 'fab fa-react' },
-    { name: 'Linux', icon: 'fab fa-linux' },
-    { name: 'Git', icon: 'fab fa-git-alt' }
-  ];
-
-  featuredSkillsContainer.innerHTML = '';
-  skillsToDisplay.forEach(skill => {
-    const skillCol = document.createElement('div');
-    skillCol.className = 'col-6 col-md-3 mb-4';
-
-    const skillItem = document.createElement('div');
-    skillItem.className = 'skill-item p-3';
-
-    skillItem.innerHTML = `
-      <i class="${skill.icon} fa-2x mb-3 text-primary"></i>
-      <h5>${skill.name}</h5>
-    `;
-
-    skillCol.appendChild(skillItem);
-    featuredSkillsContainer.appendChild(skillCol);
-  });
-
   if (typeof feather !== 'undefined') {
     feather.replace();
   }

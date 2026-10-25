@@ -16,7 +16,7 @@ const projectsData = [
     category: "web",
     icon: "activity",
     technologies: "Next.js 15+ • React 19 • Tailwind CSS 4 • Neon • Leaflet",
-    description: "This project was born out of being fed up with seeing ads in the middle of my Strava stats, so I decided to build my own dashboard. Run Dashboard is a high-performance personal web application designed for runners who want a more curated and insightful view of their training.",
+    description: "This project was born out of being fed up with seeing ads in the middle of my Strava stats, so I decided to build my dashboard.",
     detailPage: "projects/run-dashboard.html",
     githubLink: "",
     featured: false,
@@ -39,7 +39,7 @@ const projectsData = [
     category: "Machine & Deep Learning",
     icon: "layers",
     technologies: "Machine Learning • Python • Snakemake • Hydra",
-    description: "Research project conducted at NECSTLab, Politecnico di Milano, as part of the Leonardo project in collaboration with Samuele Tondelli and under the supervision of Leonardo De Grandis.\n\nCurrently contributing to a pangenomic variant classification project using Graph Machine Learning techniques.\n\nThe research activities focus on applying advanced AI and data-driven methods to computational biology and genomics, with the goal of improving variant classification accuracy in genomic datasets. the project is still ongoing.",
+    description: "Research project conducted at NECSTLab, Politecnico di Milano, as part of the Leonardo project in collaboration with Samuele Tondelli and under the supervision of Leonardo De Grandis.\n\nContributed to pangenomic variant classification using Machine Learning techniques.\n\nThe research activities focused on applying advanced AI and data-driven methods to computational biology and genomics, with the goal of benchmarking and improving variant classification accuracy in genomic datasets.",
     detailsLink: "",
     detailPage: "projects/variant-classification.html",
     githubLink: "https://github.com/necst/variant-classification-ml",
@@ -97,26 +97,6 @@ const projectsData = [
     featured: false
   },
   {
-    title: "Racing Telemetry System",
-    category: "data",
-    icon: "bar-chart-2",
-    technologies: "Java • MQTT • Real-time Data",
-    description: "Developed for the MoRe Modena Racing team together with Pietro Carrucciu and Davide Paltrinieri. This system provides real-time visualization of car sensor data, structured database storage, and multi-level remote access capabilities. (Deprecated)",
-    detailPage: "projects/telemetry.html",
-    githubLink: "https://github.com/carruc/FS_OnboardPC",
-    featured: false
-  },
-  {
-    title: "Flying Koopas",
-    category: "game",
-    icon: "zap",
-    technologies: "Java • JavaFX",
-    description: "Flying Koopas is a game developed as part of the OOP exam project at UniMoRe, created through a collaboration with Davide Paltrinieri. Inspired by BBTAN, the goal is to destroy items on the screen using koopas dropped from question marks. Players control the koopas by holding and moving the mouse to determine launch power, and once all items are destroyed, a new game can be started.",
-    detailPage: "projects/flyingkoopas.html",
-    githubLink: "https://github.com/PaltrinieriDavide/FlyingKoopas",
-    featured: false
-  },
-  {
     title: "Expiration Tracker",
     category: "mobile",
     icon: "smartphone",
@@ -138,7 +118,7 @@ const projectsData = [
     featured: false,
     private: true
   },
-  {
+  /*{
     title: "ClockTerm",
     category: "scripts",
     icon: "clock",
@@ -146,6 +126,26 @@ const projectsData = [
     description: "A terminal clock. That's it.\n\nVibecoded in an afternoon while studying a subject that somehow makes you want to stare at anything except the actual slides. It displays the current time in giant ASCII blocks, shows seconds, and renders the date below. It asks nothing of you in return — no notifications, no tabs, no suggestions. Just the cruel, unstoppable passage of time, quietly judging you.",
     detailPage: "projects/clockterm.html",
     githubLink: "https://github.com/riccardomasetti/clockterm",
+    featured: false
+  },*/
+  {
+    title: "Racing Telemetry System",
+    category: "data",
+    icon: "bar-chart-2",
+    technologies: "Java • MQTT • Real-time Data",
+    description: "Developed for the MoRe Modena Racing team together with Pietro Carrucciu and Davide Paltrinieri. This system provides real-time visualization of car sensor data, structured database storage, and multi-level remote access capabilities. (Deprecated)",
+    detailPage: "projects/telemetry.html",
+    githubLink: "https://github.com/carruc/FS_OnboardPC",
+    featured: false
+  },
+  {
+    title: "Flying Koopas",
+    category: "game",
+    icon: "zap",
+    technologies: "Java • JavaFX",
+    description: "Flying Koopas is a game developed as part of the OOP exam project at UniMoRe, created through a collaboration with Davide Paltrinieri. Inspired by BBTAN, the goal is to destroy items on the screen using koopas dropped from question marks. Players control the koopas by holding and moving the mouse to determine launch power, and once all items are destroyed, a new game can be started.",
+    detailPage: "projects/flyingkoopas.html",
+    githubLink: "https://github.com/PaltrinieriDavide/FlyingKoopas",
     featured: false
   },
 
