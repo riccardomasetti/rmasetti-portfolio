@@ -124,7 +124,7 @@ function initExperiences() {
 
   container.replaceChildren();
 
-  const sortedExperiences = [...experiencesData].sort(
+  const sortedExperiences = experiencesData.filter(experience => !experience.hidden).sort(
     (first, second) => new Date(second.startDate) - new Date(first.startDate)
   );
 

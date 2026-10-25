@@ -42,6 +42,7 @@ const experiencesData = [
   },
   {
     company: "University of Modena and Reggio Emilia",
+    hidden: true, // Remove this flag to restore the entry in the timeline.
     role: "Software Engineer",
     location: "Modena, Italy",
     startDate: "2024-02-01",
