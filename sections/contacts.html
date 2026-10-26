@@ -1,82 +1,30 @@
-
-<section id="contacts" class="portfolio-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center mb-4">
-          <h1 class="display-4 fw-bold section-title">Get In <span class="text-primary">Touch</span></h1>
-          <div class="underline mx-auto" style="width: 80px; height: 4px; background-color: #0d6efd; margin-top: 15px;"></div>
-        </div>
+<section id="contacts" class="portfolio-section" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="contact-content text-center mx-auto">
+      <h1 id="contact-heading" class="display-4 fw-bold section-title">Get In <span class="text-primary">Touch</span></h1>
+      <div class="contact-underline mx-auto" aria-hidden="true"></div>
+      <p class="section-intro contact-intro">
+        Have a project in mind, a question about my work, or just want to connect?
+      </p>
+      <div class="contact-actions">
+        <a href="mailto:riccardo.masetti@outlook.com" class="btn btn-primary">
+          <i data-feather="mail" aria-hidden="true"></i> Email me
+        </a>
+        <a href="https://www.linkedin.com/in/r-masetti/" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
+          <i data-feather="linkedin" aria-hidden="true"></i> Connect on LinkedIn
+        </a>
       </div>
-  
-      <div class="row">
-        <div class="col-lg-6 mb-5 mb-lg-0">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-body p-4">
-              <h3 class="fw-bold mb-4">Contact Form</h3>
-              <form id="contactForm" action="https://formspree.io/f/xqapgrwe" method="POST">
-                <div class="mb-3">
-                  <label for="name" class="form-label">Your Name</label>
-                  <input type="text" class="form-control" id="name" name="name" required>
-                </div>
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email Address</label>
-                  <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="mb-3">
-                  <label for="message" class="form-label">Message</label>
-                  <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary px-4 py-2" style="border-radius: 30px;">
-                  <i data-feather="send" class="me-2" aria-hidden="true"></i> <span id="contact-submit-label">Send Message</span>
-                </button>
-              </form>
-              <div id="formSuccess" class="alert alert-success mt-3 d-none" role="status">
-                Message sent successfully!
-              </div>
-              <div id="formError" class="alert alert-danger mt-3 d-none" role="alert"></div>
-            </div>
-          </div>
-        </div>
-  
-        <div class="col-lg-6">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-body p-4">
-              <h3 class="fw-bold mb-4">Contact Info</h3>
-              
-              <div class="d-flex align-items-start mb-4">
-                <div class="bg-primary bg-opacity-10 p-3 rounded me-4">
-                  <i data-feather="mail" style="color: #ffffff; stroke: #ffffff;"></i>
-                </div>
-                <div>
-                  <h5 class="fw-bold mb-1">Email</h5>
-                  <a href="mailto:riccardo.masetti@outlook.com" class="text-decoration-none">riccardo.masetti@outlook.com</a>
-                </div>
-              </div>
-  
-              <div class="mt-5">
-                <h5 class="fw-bold mb-4">Social Profiles</h5>
-                <div class="wrapper">
-                  <a href="https://www.linkedin.com/in/r-masetti/" target="_blank" rel="noopener noreferrer" class="button social-linkedin" aria-label="LinkedIn">
-                     <div class="icon">
-                        <i class="fab fa-linkedin"></i>
-                     </div>
-                     <span>LinkedIn</span>
-                  </a>
-                  <a href="https://github.com/riccardomasetti" target="_blank" rel="noopener noreferrer" class="button social-github" aria-label="GitHub">
-                     <div class="icon">
-                        <i class="fab fa-github"></i>
-                     </div>
-                     <span>Github</span>
-                  </a>
-           <a href="https://x.com/GinMase" target="_blank" rel="noopener noreferrer" class="button social-x" aria-label="X">
-             <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.835L0 1.154h7.594l5.243 6.932 6.064-6.933Zm-1.29 19.49h2.039L6.486 3.24H4.298l13.313 17.403Z"/></svg></div>
-             <span>X</span>
-           </a>
-               </div>
-              </div>
-            </div>
-          </div>
+      <p class="contact-email">riccardo.masetti@outlook.com</p>
+      <div class="contact-secondary">
+        <div class="contact-profile-links">
+          <a href="https://github.com/riccardomasetti" target="_blank" rel="noopener noreferrer">
+            <i data-feather="github" aria-hidden="true"></i> GitHub
+          </a>
+          <a href="https://x.com/GinMase" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.835L0 1.154h7.594l5.243 6.932 6.064-6.933Zm-1.29 19.49h2.039L6.486 3.24H4.298l13.313 17.403Z"/></svg> X
+          </a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

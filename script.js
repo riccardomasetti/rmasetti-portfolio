@@ -44,10 +44,7 @@ async function initSite() {
   // 3. Initialize Experiences
   initExperiences();
 
-  // 4. Initialize Contact Form
-  initContactForm();
-
-  // 5. Handle hash navigation after sections are loaded
+  // 4. Handle hash navigation after sections are loaded
   handleHashNavigation();
 }
 
@@ -127,56 +124,6 @@ function initNavbarLogic() {
   window.addEventListener('scroll', scheduleUpdate, { passive: true });
   window.addEventListener('resize', scheduleUpdate);
   return updateActiveSection;
-}
-
-function initContactForm() {
-  const form = document.getElementById('contactForm');
-  if (!form) return;
-  const button = form.querySelector('button[type="submit"]');
-  const label = document.getElementById('contact-submit-label');
-  const success = document.getElementById('formSuccess');
-  const error = document.getElementById('formError');
-  let submitting = false;
-
-  form.addEventListener('submit', async event => {
-    event.preventDefault();
-    if (submitting) return;
-    submitting = true;
-    button.disabled = true;
-    label.textContent = 'Sending…';
-    form.setAttribute('aria-busy', 'true');
-    success.classList.add('d-none');
-    error.classList.add('d-none');
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 20000);
-
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' },
-        signal: controller.signal
-      });
-      if (!response.ok) {
-        error.textContent = response.status === 429
-          ? 'The contact form is temporarily unavailable. Please try again later or email me at riccardo.masetti@outlook.com.'
-          : 'Your message could not be sent. Please try again or email me at riccardo.masetti@outlook.com.';
-        error.classList.remove('d-none');
-        return;
-      }
-      form.reset();
-      success.classList.remove('d-none');
-    } catch {
-      error.textContent = 'I couldn’t confirm that your message was sent. Please check your connection, or email me at riccardo.masetti@outlook.com.';
-      error.classList.remove('d-none');
-    } finally {
-      clearTimeout(timeout);
-      submitting = false;
-      button.disabled = false;
-      label.textContent = 'Send Message';
-      form.removeAttribute('aria-busy');
-    }
-  });
 }
 
 // Embed the featured card icons so their first render does not need Feather.
